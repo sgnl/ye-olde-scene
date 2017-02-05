@@ -49,12 +49,10 @@ export let filterSection = css({
   width: '100%',
   padding: '0.25em',
   backgroundColor: 'salmon'
-  // padding: '1.5em'
 })
 
 export let filterInput = css({
   display: 'block',
-  // display: 'none',
   width: '70%',
   background: '#fcaca3',
   padding: '0.5em 0.5em',
@@ -76,7 +74,7 @@ export let mainSection = css({
   backgroundColor: 'salmon'
 })
 
-let bounce = css.keyframes('bounce', { // optional name
+let bounce = css.keyframes({
   '0%': {
     transform: 'scaleY(0.1)'
   },
@@ -108,7 +106,6 @@ export let grid = css(container, {
   paddingLeft: '10px',
   paddingRight: '10px',
   animation: `${bounce} 2s ease`
-  // padding: '1em' // use for >mobile
 })
 
 // for fancy bottom-up load in effect while searching
@@ -118,13 +115,7 @@ export let card = css({
   backgroundColor: 'salmon',
   marginBottom: '5%',
   borderTop: '1px solid #333',
-  borderBottom: '1px solid #333',
-  // textAlign: 'center'
-  // display: 'none',
-  // flex: '0 1 auto',
-  // padding: '1em',
-  // maxWidth: '80%',
-  // borderRadius: '2px'
+  borderBottom: '1px solid #333'
 })
 
 export let newForm = css(container, {
@@ -139,10 +130,10 @@ export let footerStyle = css(container, {
   fontSize: '12px'
 })
 
-css.global('*, form',  {
-  // padding: '0',
-  // margin: '0',
-  // boxSizing: 'border-box'
+css.global('*',  {
+  padding: '0',
+  margin: '0',
+  boxSizing: 'border-box'
 })
 
 css.global('html, body',  {
