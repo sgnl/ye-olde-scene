@@ -27,6 +27,7 @@ export let header = css({
   position: 'fixed',
   left: '0',
   right: '0',
+  zIndex: '9999',
   background: 'pink'
 })
 
