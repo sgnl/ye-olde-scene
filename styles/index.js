@@ -22,7 +22,7 @@ export let gridStyle = css(container, {
 
 export let cardStyle = css({
   flex: '0 1 25%',
-  // backgroundColor: '#555',
+  backgroundColor: 'salmon',
   padding: '1em',
   minHeight: '220px',
   margin: '0 0 1em 0',
@@ -48,6 +48,10 @@ export let filterInputStyle = css({
   '::placeholder': {
     color: '#777'
   }
+})
+
+export let newFormStyle = css(container, {
+
 })
 
 export let footerStyle = css(container, {
