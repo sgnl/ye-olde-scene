@@ -7,7 +7,7 @@ class CardStore {
   @observable cards
 
   constructor(isServer, lastUpdate) {
-    this.cards = [1, 2, 3]
+    this.cards = [1, 2, 3, 3, 4, 5, 6, 5]
     this.lastUpdate = lastUpdate
   }
 }
