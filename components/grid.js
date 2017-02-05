@@ -11,18 +11,14 @@ export default inject("store")(({ store }) => {
       <Filter  />
       {
         store.cards.map((c,i) => <article {...cardStyle} key={i}>
-          <h2>The Pug and Buns</h2>
+          <header><h2>{c.artist_name}</h2></header>
           <ul>
-            <li>punk</li>
-            <li>metal</li>
+            {c.genres.map((g, i) => <li>{g}</li>)}
           </ul>
           <ul>
-            <li>Wut</li>
-            <li>Wut</li>
-            <li>Wut</li>
-            <li>Wut</li>
-            <li>Wut</li>
+            {c.websites.map((g, i) => <li>{`fa-${g[0]} url-${g[1]}`}</li>)}
           </ul>
+          <div>{c.biography}</div>
         </article>)
       }
     </section>

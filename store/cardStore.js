@@ -7,7 +7,71 @@ class CardStore {
   @observable cards
 
   constructor(isServer, lastUpdate) {
-    this.cards = [1, 2, 3, 3, 4, 5, 6, 5]
+    this.cards = [
+      {
+        artist_name: 'Beaman',
+        genres: ['pop-punk', 'punk'],
+        websites: [
+          ['bandcamp', 'beaman.bandcamp.com'],
+          ['facebook', 'www.facebook.com/upthebeaman']
+        ],
+        biography: 'We write songs about politics and relationships... and sometimes farts.'
+      },
+      {
+        artist_name: 'Beaman',
+        genres: ['pop-punk', 'punk'],
+        websites: [
+          ['bandcamp', 'beaman.bandcamp.com'],
+          ['facebook', 'www.facebook.com/upthebeaman']
+        ],
+        biography: 'We write songs about politics and relationships... and sometimes farts.'
+      },
+      {
+        artist_name: 'Beaman',
+        genres: ['pop-punk', 'punk'],
+        websites: [
+          ['bandcamp', 'beaman.bandcamp.com'],
+          ['facebook', 'www.facebook.com/upthebeaman']
+        ],
+        biography: 'We write songs about politics and relationships... and sometimes farts.'
+      },
+      {
+        artist_name: 'Beaman',
+        genres: ['pop-punk', 'punk'],
+        websites: [
+          ['bandcamp', 'beaman.bandcamp.com'],
+          ['facebook', 'www.facebook.com/upthebeaman']
+        ],
+        biography: 'We write songs about politics and relationships... and sometimes farts.'
+      },
+      {
+        artist_name: 'Beaman',
+        genres: ['pop-punk', 'punk'],
+        websites: [
+          ['bandcamp', 'beaman.bandcamp.com'],
+          ['facebook', 'www.facebook.com/upthebeaman']
+        ],
+        biography: 'We write songs about politics and relationships... and sometimes farts.'
+      },
+      {
+        artist_name: 'Beaman',
+        genres: ['pop-punk', 'punk'],
+        websites: [
+          ['bandcamp', 'beaman.bandcamp.com'],
+          ['facebook', 'www.facebook.com/upthebeaman']
+        ],
+        biography: 'We write songs about politics and relationships... and sometimes farts.'
+      },
+      {
+        artist_name: 'Beaman',
+        genres: ['pop-punk', 'punk'],
+        websites: [
+          ['bandcamp', 'beaman.bandcamp.com'],
+          ['facebook', 'www.facebook.com/upthebeaman']
+        ],
+        biography: 'We write songs about politics and relationships... and sometimes farts.'
+      }
+    ]
     this.lastUpdate = lastUpdate
   }
 }

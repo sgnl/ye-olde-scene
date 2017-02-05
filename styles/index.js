@@ -2,9 +2,31 @@
 import { css, fontFace } from 'glamor'
 import 'glamor/reset'
 
+/**
+ * Style Guide
+ *
+ * mobile, first! -> tablet -> desktop
+ *
+ * Declaration order: http://codeguide.co/
+ * 1. Positioning
+ * 1. Box model
+ * 1. Typographic
+ * 1. Visual
+ */
+
+
 const container = css({
   maxWidth: '1200px',
   margin: '0 auto',
+})
+
+export let frameStyle = css({
+  padding: '0'
+})
+
+export let logoStyle = css(container, {
+  padding: '1.5em 0',
+  textAlign: 'center'
 })
 
 export let navStyle = css(container, {
@@ -12,8 +34,12 @@ export let navStyle = css(container, {
   padding: '2rem 0'
 })
 
+export let mainSection = css({
+  backgroundColor: 'salmon'
+})
+
 export let gridStyle = css(container, {
-  backgroundColor: 'salmon',
+
   display: 'flex',
   flexFlow: 'row wrap',
   justifyContent: 'space-around',
@@ -21,10 +47,12 @@ export let gridStyle = css(container, {
 })
 
 export let cardStyle = css({
-  flex: '0 1 25%',
+  display: 'none',
+  flex: '0 1 auto',
   backgroundColor: 'salmon',
   padding: '1em',
   minHeight: '220px',
+  maxWidth: '',
   margin: '0 0 1em 0',
   border: '1px solid #333',
   borderRadius: '2px'

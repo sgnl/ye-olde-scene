@@ -1,21 +1,30 @@
 
 import Link from 'next/link'
 import Head from 'next/head'
-import { navStyle, topHeaderStyle, footerStyle } from '../styles'
+import {
+  frameStyle,
+  logoStyle,
+  navStyle,
+  topHeaderStyle,
+  mainSection,
+  footerStyle
+} from '../styles'
 
 export default ({ children, title = 'Ye Olde Scene History' }) => (
-  <div>
+  <div { ...frameStyle }>
     <header>
-      <nav { ...navStyle }>
-        <Link href='/'><a>ye&nbsp;old&nbsp;scene</a></Link>&nbsp;.&nbsp;
-        <Link href='/new'><a>new</a></Link>
-      </nav>
+      <Link href='/'>
+        <h1 { ...logoStyle }>ye&nbsp;old&nbsp;scene</h1>
+      </Link>
+      {/*<nav { ...navStyle }>
+              <Link href='/new'><a>new</a></Link>
+            </nav>*/}
     </header>
-
-    { children }
-
+    <div { ...mainSection}>
+      { children }
+    </div>
     <footer { ...footerStyle }>
-      <p>2017 coded with aloha</p>
+      <p>coded with aloha</p>
     </footer>
   </div>
 )
