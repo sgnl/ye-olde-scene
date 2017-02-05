@@ -1,29 +1,32 @@
 
 import Link from 'next/link'
 import Head from 'next/head'
+import { Filter } from '../components'
 import {
-  frameStyle,
-  logoStyle,
-  navStyle,
-  topHeaderStyle,
+  frame,
+  header,
+  logo,
+  nav,
+  topHeader,
   mainSection,
-  footerStyle
+  footer
 } from '../styles'
 
-export default ({ children, title = 'Ye Olde Scene History' }) => (
-  <div { ...frameStyle }>
-    <header>
+export default ({ children }) => (
+  <div { ...frame }>
+    <header { ...header }>
       <Link href='/'>
-        <h1 { ...logoStyle }>ye&nbsp;old&nbsp;scene</h1>
+        <h1 { ...logo }>ye old scene</h1>
       </Link>
-      {/*<nav { ...navStyle }>
+      {/*<nav { ...nav }>
               <Link href='/new'><a>new</a></Link>
             </nav>*/}
+      <Filter  />
     </header>
     <div { ...mainSection}>
       { children }
     </div>
-    <footer { ...footerStyle }>
+    <footer { ...footer }>
       <p>coded with aloha</p>
     </footer>
   </div>

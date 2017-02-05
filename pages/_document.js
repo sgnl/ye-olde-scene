@@ -12,7 +12,8 @@ export default class MyDocument extends Document {
     return (
       <html>
         <Head>
-          <title>My page</title>
+          <title>ye olde scene - curating local music history</title>
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link href="https://fonts.googleapis.com/css?family=Lato:300|Open+Sans" rel="stylesheet" />
           <style dangerouslySetInnerHTML={{ __html: this.props.css }} />
         </Head>

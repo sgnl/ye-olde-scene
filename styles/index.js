@@ -1,6 +1,5 @@
 
 import { css, fontFace } from 'glamor'
-import 'glamor/reset'
 
 /**
  * Style Guide
@@ -20,65 +19,115 @@ const container = css({
   margin: '0 auto',
 })
 
-export let frameStyle = css({
+export let frame = css({
   padding: '0'
 })
 
-export let logoStyle = css(container, {
-  padding: '1.5em 0',
-  textAlign: 'center'
+export let header = css({
+  position: 'fixed',
+  left: '0',
+  right: '0',
+  background: 'pink'
 })
 
-export let navStyle = css(container, {
+export let logo = css({
+  width: '50%',
+  margin: '0 auto',
+  padding: '0.5em 0',
+  textAlign: 'center',
+  fontSize: '18px'
+})
+
+export let nav = css(container, {
   display: 'flex',
   padding: '2rem 0'
 })
 
-export let mainSection = css({
-  backgroundColor: 'salmon'
-})
-
-export let gridStyle = css(container, {
-
-  display: 'flex',
-  flexFlow: 'row wrap',
-  justifyContent: 'space-around',
-  padding: '1.5em'
-})
-
-export let cardStyle = css({
-  display: 'none',
-  flex: '0 1 auto',
-  backgroundColor: 'salmon',
-  padding: '1em',
-  minHeight: '220px',
-  maxWidth: '',
-  margin: '0 0 1em 0',
-  border: '1px solid #333',
-  borderRadius: '2px'
-})
-
-export let filterStyle = css({
+export let filterSection = css({
   display: 'flex',
   justifyContent: 'center',
   width: '100%',
-  padding: '1.5em'
+  padding: '0.25em',
+  backgroundColor: 'salmon'
+  // padding: '1.5em'
 })
 
-export let filterInputStyle = css({
+export let filterInput = css({
+  display: 'block',
+  // display: 'none',
+  width: '70%',
   background: '#fcaca3',
-  padding: '1em 1em',
-  minWidth: '50%',
+  padding: '0.5em 0.5em',
   border: '0',
   color: '#333',
   textAlign: 'center',
   letterSpacing: '0.25em',
   '::placeholder': {
-    color: '#777'
+    color: '#777',
+    fontSize: '12px'
   }
 })
 
-export let newFormStyle = css(container, {
+export let mainSection = css({
+  display: 'flex',
+  flexDirection: 'column',
+  flexWrap: 'nowrap',
+  justifyContent: 'stretch',
+  backgroundColor: 'salmon'
+})
+
+let bounce = css.keyframes('bounce', { // optional name
+  '0%': {
+    transform: 'scaleY(0.1)'
+  },
+  '40%': {
+    transform: 'scaleY(1.02)'
+  },
+  '60%': {
+    transform: 'scaleY(0.98)'
+  },
+  '80%': {
+    transform: 'scaleY(1.01)'
+  },
+  '100%': {
+    transform: 'scaleY(0.98)'
+  },
+  '80%': {
+    transform: 'scaleY(1.01)'
+  },
+  '100%': {
+    transform: 'scaleY(1)'
+  }
+})
+
+export let grid = css(container, {
+  display: 'flex',
+  flexFlow: 'row wrap',
+  justifyContent: 'stretch',
+  paddingTop: '40vh',
+  paddingLeft: '10px',
+  paddingRight: '10px',
+  animation: `${bounce} 2s ease`
+  // padding: '1em' // use for >mobile
+})
+
+// for fancy bottom-up load in effect while searching
+// paddingTop: '200%',
+
+export let card = css({
+  backgroundColor: 'salmon',
+  marginBottom: '5%',
+  borderTop: '1px solid #333',
+  borderBottom: '1px solid #333',
+  // textAlign: 'center'
+  // display: 'none',
+  // flex: '0 1 auto',
+  // padding: '1em',
+  // maxWidth: '80%',
+  // borderRadius: '2px'
+})
+
+export let newForm = css(container, {
 
 })
 
@@ -86,13 +135,20 @@ export let footerStyle = css(container, {
   display: 'flex',
   justifyContent: 'center',
   padding: '1em 0',
+  textAlign: 'center',
   fontSize: '12px'
+})
+
+css.global('*, form',  {
+  // padding: '0',
+  // margin: '0',
+  // boxSizing: 'border-box'
 })
 
 css.global('html, body',  {
   backgroundColor: 'pink',
   fontFamily: 'Open Sans',
-  fontSize: '16px',
+  fontSize: 'calc(1.5vw + 1.5vh)',
   letterSpacing: '0.25em',
   color: '#3A3A3A'
 })
@@ -100,6 +156,10 @@ css.global('html, body',  {
 css.global('h1, h2, h3, h4, h5, h6, a', {
   fontFamily: 'Lato',
   fontWeight: '300',
-  fontSize: '1.2em',
+  fontSize: 'calc(2vw + 2vh)',
   color: '#000'
+})
+
+css.global('ul', {
+  listStyleType: 'none'
 })

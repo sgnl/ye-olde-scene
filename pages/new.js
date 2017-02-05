@@ -1,11 +1,11 @@
 
 import Layout from '../components/layout'
-import { newFormStyle } from '../styles'
+import { newForm } from '../styles'
 
 export default () => {
   return (
     <Layout>
-      <form { ...newFormStyle }>
+      <form { ...newForm }>
         <label>
           name:
           <input type="text" name="name" />

@@ -1,6 +1,6 @@
 
-import { filterStyle, filterInputStyle } from '../styles'
+import { filterSection, filterInput } from '../styles'
 
-export default () => <form {...filterStyle}>
-  <input {...filterInputStyle} placeholder="search for something..." />
+export default () => <form {...filterSection}>
+  <input {...filterInput} placeholder="[ search here ]" />
 </form>
