@@ -1,7 +1,9 @@
 import Layout from '../components/layout'
+import { mainFlex } from '../styles'
 
 export default () => (
   <Layout>
-    <h1>This is where cards go!</h1>
+    <div>Card 1</div>
+    <div>Card 2</div>
   </Layout>
 )

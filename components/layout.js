@@ -2,7 +2,7 @@
 import Link from 'next/link'
 import Head from 'next/head'
 
-import { navStyle } from './styles/'
+import { navStyle } from '../styles'
 
 export default ({ children, title = 'Ye Olde Scene History' }) => (
   <div>
