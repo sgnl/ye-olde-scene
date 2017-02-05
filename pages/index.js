@@ -2,6 +2,6 @@ import Layout from '../components/layout'
 
 export default () => (
   <Layout>
-    <div>Hello World.</div>
+    <h1>This is where cards go!</h1>
   </Layout>
 )
