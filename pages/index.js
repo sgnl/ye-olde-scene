@@ -1,6 +1,6 @@
 
 import { Component } from 'react'
-import { Layout, Grid } from '../components'
+import { Layout, Grid, Filter } from '../components'
 import { mainFlex } from '../styles'
 
 import { Provider } from 'mobx-react'
