@@ -2,6 +2,8 @@
 import Link from 'next/link'
 import Head from 'next/head'
 
+import { navStyle } from './styles/'
+
 export default ({ children, title = 'Ye Olde Scene History' }) => (
   <div>
     <Head>
@@ -11,7 +13,7 @@ export default ({ children, title = 'Ye Olde Scene History' }) => (
       <link href="https://fonts.googleapis.com/css?family=Lato:300|Open+Sans" rel="stylesheet" />
     </Head>
     <header>
-      <nav>
+      <nav { ...navStyle }>
         <Link href='/'><a>/</a></Link>&nbsp;|&nbsp;
         <Link href='/new'><a>new</a></Link>
       </nav>
@@ -22,15 +24,5 @@ export default ({ children, title = 'Ye Olde Scene History' }) => (
     <footer>
       footer
     </footer>
-    <style jsx>{`
-      header {
-        display: flex;
-        justify-content: center;
-      }
-    `}</style>
-    <style global>{`
-      body { font-family: 'Lato', sans-serif; }
-      h1, h2, h3, h4, h5, h6 { font-family: 'Open Sans', sans-serif; }
-    `}</style>
   </div>
 )

@@ -1,4 +1,11 @@
 
 import Layout from '../components/layout'
+import cardStore from '../store/cardStore'
 
-export default () => <Layout><h2>New Card!</h2></Layout>
+console.log('cardStore: ', cardStore);
+
+export default () => {
+  return (
+    <Layout><h2>New Card!</h2></Layout>
+  )
+}
