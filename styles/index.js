@@ -76,6 +76,11 @@ export let filterInput = css({
   }
 })
 
+export let outputCount = css({
+  padding: '0.5em 0',
+  textAlign: 'center'
+})
+
 export let mainSection = css({
   display: 'flex',
   flexDirection: 'column',
