@@ -48,17 +48,19 @@ export let nav = css(container, {
   padding: '2rem 0'
 })
 
-export let filterSection = css({
+export let form = css({
   display: 'flex',
   justifyContent: 'center',
-  width: '100%',
-  padding: '0.25em',
+  flexFlow: 'now wrap',
+  padding: '0.25em'
+})
+
+export let filterSection = css({
   backgroundColor: 'salmon'
 })
 
 export let filterInput = css({
-  display: 'block',
-  width: '70%',
+  width: '100%',
   background: '#fcaca3',
   padding: '0.5em 0.5em',
   border: '0',

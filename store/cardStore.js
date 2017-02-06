@@ -1,5 +1,5 @@
 
-import { observable, computed, action, toJS } from 'mobx'
+import { observable, toJS } from 'mobx'
 import { css } from 'glamor'
 import {
   infoSlideUp,
@@ -96,15 +96,21 @@ class CardStore {
         biography: 'Hardcore punk from a real city full of freaks masquerading as paradise.'
       }
     ]
+    this.count = this.cards.length
     this.lastUpdate = lastUpdate
     this.artistNameReducer = this.artistNameReducer.bind(this)
     this.genreReducer = this.genreReducer.bind(this)
   }
 
+  // create options for search
+  // e.g. `name:har` should only show harshist
+  //      `genre:po` should show genres only, etc...
   updateFilterString (value = '') {
-    if (!value.length) return
+    if (!value.length) return this.filterString = []
     this.filterString = value.toLowerCase().split('')
-    return this.filteredCards = [].concat(this.artistNameReducer(), this.genreReducer())
+    const newCards = [].concat(this.artistNameReducer(), this.genreReducer())
+    this.count = newCards.length
+    return this.filteredCards = newCards
   }
 
   artistNameReducer () {

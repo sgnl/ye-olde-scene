@@ -39,7 +39,7 @@ export default inject("store")(observer(({ store }) => {
                   </ul>
                 </header>
                 <ul { ...genreList}>
-                  { c.genres.map((g, i) => <li { ...genreItem } key={ i }>{ g }</li>)}
+                  { c.genres.map((g, i) => <li { ...genreItem } key={ i } onClick={(e) => store.updateFilterString(e.target.innerHTML)}>{ g }</li>)}
                 </ul>
                 {
                   !c.biography ? '' : <p { ...cardBio }>{ c.biography }</p>
