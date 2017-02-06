@@ -102,11 +102,9 @@ class CardStore {
   }
 
   updateFilterString (value = '') {
+    if (!value.length) return
     this.filterString = value.toLowerCase().split('')
-    let genres = this.genreReducer()
-    console.log('genres: ', genres);
-    const newFilteredCardsState = [].concat(this.artistNameReducer(), genres)
-    return this.filteredCards = newFilteredCardsState;
+    return this.filteredCards = [].concat(this.artistNameReducer(), this.genreReducer())
   }
 
   artistNameReducer () {
