@@ -17,16 +17,43 @@ export default inject("store")(observer(({ store }) => {
   return (
     <section {...grid}>
       {
-        cards.map((c,i) => <article {...card} key={i}>
-          <header><h2 { ...cardHeader }>{c.artist_name}</h2></header>
-          <ul { ...genreList}>
-            {c.genres.map((g, i) => <li key={i}>{g}</li>)}
-          </ul>
-          <ul>
-            {c.websites.map((g, i) => <li key={i}>{g[0]}</li>)}
-          </ul>
-          <div>{c.biography}</div>
-        </article>)
+        cards.map((c,i) => {
+          if (!c.hasOwnProperty('isBanner')) {
+            return (
+              <article {...card} key={i}>
+                <header><h2 { ...cardHeader }>{c.artist_name}</h2></header>
+                <ul { ...genreList}>
+                  {c.genres.map((g, i) => <li key={i}>{g}</li>)}
+                </ul>
+                <ul>
+                  {c.websites.map((g, i) => <li key={i}>{g[0]}</li>)}
+                </ul>
+                <p>{c.biography}</p>
+              </article>
+            )
+          }
+
+          switch (c.isBanner) {
+            case 'INFO':
+              return (
+                <article key={i}>
+                  <p { ...c.styles }>{ c.message }</p>
+                </article>
+              )
+            case 'PROMOTION':
+              return (
+                <article { ...card } key={i}>
+                  <p { ...c.styles }>{ c.message }</p>
+                </article>
+              )
+            default:
+              return (
+                <article>
+                  <p>something went wrong &#58;&lt;</p>
+                </article>
+              )
+          }
+        })
       }
     </section>
   )

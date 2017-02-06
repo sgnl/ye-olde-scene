@@ -60,6 +60,8 @@ export let filterInput = css({
   border: '0',
   color: '#333',
   textAlign: 'center',
+  borderRadius: '3px',
+  boxShadow: '0 1px 3px -1px #5A5A5A',
   letterSpacing: '0.25em',
   '::placeholder': {
     color: '#777',
@@ -102,7 +104,7 @@ let bounce = css.keyframes({
 export let grid = css(container, {
   display: 'flex',
   flexFlow: 'row wrap',
-  paddingTop: '40vh',
+  paddingTop: '20vh',
   paddingLeft: '10px',
   paddingRight: '10px',
   animation: `${bounce} 2s ease`
@@ -115,7 +117,7 @@ export let card = css({
   marginBottom: '5%',
   padding: '2em 0.5em',
   backgroundColor: 'salmon',
-  borderTop: '3px solid #5A5A5A'
+  borderTop: '1px solid #5A5A5A'
 })
 
 export let cardHeader = css({
@@ -128,6 +130,23 @@ export let genreList = css({
   paddingBottom: '0.5em',
   paddingLeft: '1em',
   borderLeft: '2px solid #bbb',
+})
+
+/* Animations */
+let disappear = css.keyframes({
+  from: {
+    opacity: '1'
+  },
+
+  to: {
+    opacity: '0',
+    transform: 'translate3d(0, -100%, 0)'
+  }
+})
+
+/* custom banner styles */
+export let info = css({
+  animation: `${disappear} 7s cubic-bezier(.95,-0.19,.39,1.13) forwards`,
 })
 
 export let newForm = css(container, {
@@ -151,7 +170,7 @@ css.global('*',  {
 css.global('html, body',  {
   backgroundColor: 'pink',
   fontFamily: 'Open Sans',
-  fontSize: 'calc(1.5vw + 1.5vh)',
+  fontSize: 'calc(1.75vw + 1.75vh)',
   letterSpacing: '0.25em',
   color: '#3A3A3A'
 })
@@ -159,7 +178,7 @@ css.global('html, body',  {
 css.global('h1, h2, h3, h4, h5, h6, a', {
   fontFamily: 'Lato',
   fontWeight: '300',
-  fontSize: 'calc(2vw + 2vh)',
+  fontSize: 'calc(2.3vw + 2.3vh)',
   color: '#000'
 })
 

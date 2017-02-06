@@ -1,5 +1,8 @@
 
 import { observable, computed, action } from 'mobx'
+import { css } from 'glamor'
+import { info } from '../styles'
+
 
 let store = null
 
@@ -14,6 +17,14 @@ class CardStore {
     this.filteredCards = []
     this.cards = [
       {
+        isBanner: 'INFO',
+        message: `💁🏽
+        USE THE SEARCH TO FILTER`,
+        styles: css(info, {
+          textAlign: 'center'
+        })
+      },
+      {
         artist_name: 'Beaman',
         genres: ['pop-punk', 'punk'],
         websites: [
@@ -21,6 +32,13 @@ class CardStore {
           ['facebook', 'www.facebook.com/upthebeaman']
         ],
         biography: 'We write songs about politics and relationships... and sometimes farts.'
+      },
+      {
+        isBanner: 'PROMOTION',
+        message: 'THIS IS A SPECIAL PROMOTION FOR AN EVENT',
+        styles: css({
+          textAlign: 'center'
+        })
       },
       {
         artist_name: 'Poncho',
