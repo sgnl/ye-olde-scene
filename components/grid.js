@@ -2,7 +2,7 @@
 import { Component } from 'react'
 import { inject, observer } from 'mobx-react'
 import { css } from 'glamor'
-import { grid, card, cardHeader, genreList } from '../styles'
+import { grid, card, cardHeader, genreList, genreItem } from '../styles'
 
 export default inject("store")(observer(({ store }) => {
   let cards;
@@ -13,7 +13,6 @@ export default inject("store")(observer(({ store }) => {
     cards = store.cards
   }
 
-  console.log('cards: ', cards.length);
   return (
     <section {...grid}>
       {
@@ -23,7 +22,7 @@ export default inject("store")(observer(({ store }) => {
               <article {...card} key={i}>
                 <header><h2 { ...cardHeader }>{c.artist_name}</h2></header>
                 <ul { ...genreList}>
-                  {c.genres.map((g, i) => <li key={i}>{g}</li>)}
+                  {c.genres.map((g, i) => <li { ...genreItem } key={i}>{g}</li>)}
                 </ul>
                 <ul>
                   {c.websites.map((g, i) => <li key={i}>{g[0]}</li>)}

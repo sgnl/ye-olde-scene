@@ -1,5 +1,5 @@
 
-import { observable, computed, action } from 'mobx'
+import { observable, computed, action, toJS } from 'mobx'
 import { css } from 'glamor'
 import { info } from '../styles'
 
@@ -92,23 +92,32 @@ class CardStore {
       }
     ]
     this.lastUpdate = lastUpdate
-    this.updateFilteredCards = this.updateFilteredCards.bind(this)
+    this.artistNameReducer = this.artistNameReducer.bind(this)
+    this.genreReducer = this.genreReducer.bind(this)
   }
 
-  updateFilterString(value) {
-    this.filterString = value
-    const newFilteredCardsState = [].concat(this.updateFilteredCards())
+  updateFilterString (value = '') {
+    this.filterString = value.toLowerCase().split('')
+    let genres = this.genreReducer()
+    console.log('genres: ', genres);
+    const newFilteredCardsState = [].concat(this.artistNameReducer(), genres)
     return this.filteredCards = newFilteredCardsState;
   }
 
-  updateFilteredCards() {
+  artistNameReducer () {
     return this.cards.filter(({ artist_name }) => this.fuzzyMatch(artist_name, this.filterString));
   }
 
+  genreReducer () {
+    return this.cards.filter(({ genres }) => {
+      return Object.assign([], toJS(genres)).filter(c => this.fuzzyMatch(c, this.filterString)).length
+    })
+  }
+
   fuzzyMatch (str,pattern) {
-    pattern = pattern.split("").reduce(function(a,b){ return a+".*"+b; });
-    console.log('pattern: ', pattern);
-    return (new RegExp(pattern)).test(str);
+    pattern = pattern.reduce((a,b) => a + ".*" + b);
+    str = String(toJS(str))
+    return (new RegExp(pattern)).test(str.toLowerCase());
   }
 }
 

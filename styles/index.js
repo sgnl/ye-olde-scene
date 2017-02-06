@@ -59,6 +59,7 @@ export let filterInput = css({
   padding: '0.5em 0.5em',
   border: '0',
   color: '#333',
+  fontSize: '16px', // stay at >=16px because of safari's input zoom "feature"
   textAlign: 'center',
   borderRadius: '3px',
   boxShadow: '0 1px 3px -1px #5A5A5A',
@@ -101,13 +102,22 @@ let bounce = css.keyframes({
   }
 })
 
+let shrinkTopPadding = css.keyframes({
+  '0%': {
+    paddingTop: '20vh',
+  },
+  '100%': {
+    paddingTop: '4vh',
+  }
+})
+
 export let grid = css(container, {
   display: 'flex',
   flexFlow: 'row wrap',
   paddingTop: '20vh',
   paddingLeft: '10px',
   paddingRight: '10px',
-  animation: `${bounce} 2s ease`
+  animation: `${bounce} 2s ease, ${shrinkTopPadding} 7s cubic-bezier(.95,-0.19,.39,1.13) forwards`
 })
 
 // for fancy bottom-up load in effect while searching
@@ -124,11 +134,19 @@ export let cardHeader = css({
 })
 
 export let genreList = css({
-  margin: '0.75em 0',
+  margin: '0.75em 0.125em',
   paddingTop: '0.5em',
   paddingBottom: '0.5em',
   paddingLeft: '1em',
   borderLeft: '2px solid #bbb',
+})
+
+export let genreItem = css({
+  display: 'inline',
+  padding: '7px',
+  marginRight: '5px',
+  backgroundColor: '#5A5A5A',
+  color: '#aaabbb'
 })
 
 /* Animations */

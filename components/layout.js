@@ -33,7 +33,7 @@ export default class extends Component {
       <div { ...frame }>
         <header { ...header }>
           <Link href='/'>
-            <h1 { ...logo }>ye old scene</h1>
+            <h1 { ...logo }>ye olde scene</h1>
           </Link>
           {/*<nav { ...nav }>
                   <Link href='/new'><a>new</a></Link>
