@@ -19,6 +19,10 @@ const container = css({
   margin: '0 auto',
 })
 
+const spacing = css({
+  margin: '1.5em 0.125em'
+})
+
 export let frame = css({
   padding: '0'
 })
@@ -75,6 +79,7 @@ export let mainSection = css({
   flexDirection: 'column',
   flexWrap: 'nowrap',
   justifyContent: 'stretch',
+  paddingTop: '25%',
   backgroundColor: 'salmon'
 })
 
@@ -107,59 +112,62 @@ let shrinkTopPadding = css.keyframes({
     paddingTop: '20vh',
   },
   '100%': {
-    paddingTop: '4vh',
+    paddingTop: '0vh',
   }
 })
 
 export let grid = css(container, {
   display: 'flex',
   flexFlow: 'row wrap',
-  paddingTop: '20vh',
-  paddingLeft: '10px',
-  paddingRight: '10px',
   animation: `${bounce} 2s ease, ${shrinkTopPadding} 7s cubic-bezier(.95,-0.19,.39,1.13) forwards`
 })
 
-// for fancy bottom-up load in effect while searching
-// paddingTop: '200%',
-
 export let card = css({
-  padding: '2em 0.5em',
+  width: '100%',
+  padding: '2.5em 0.5em',
   backgroundColor: 'salmon',
-  borderTop: '1px solid #5A5A5A',
+  borderTop: '1px solid rgba(0, 0, 0, 0.1)',
   fontSize: '16px'
 })
 
 export let cardHeader = css({
-
+  padding: '0 0 0.125em 0',
+  fontWeight: '700'
 })
 
 export let genreList = css({
   display: 'flex',
-  margin: '0.75em 0.125em',
   paddingTop: '0.5em',
-  paddingBottom: '0.5em',
-  paddingLeft: '1em',
-  borderLeft: '2px solid #bbb',
+  paddingBottom: '1em',
 })
 
 export let genreItem = css({
-  display: 'inline',
+  width: '100%',
   padding: '7px',
   marginRight: '5px',
   backgroundColor: '#5A5A5A',
-  lineHeight: '12px',
+  lineHeight: '14px',
   color: '#aaabbb'
 })
 
-export let cardBio = css({
-  margin: '0.75em 0.125em',
-  padding: '14px 0'
+export let cardBio = css(spacing, {
+  paddingTop: '1em',
+  paddingBottom: '1em',
+  paddingLeft: '1em',
+  borderLeft: '2px solid #5A5A5A',
+  color: '#222'
 })
 
-export let urlList = css({
+export let urlList = css(spacing, {
   display: 'flex',
-  justifyContent: 'space-around'
+  justifyContent: 'space-around',
+  color: '#5A5A5A',
+  fontSize: '14px',
+  fontWeight: '700'
+})
+
+export let urlItem = css({
+  borderBottom: '1px solid #5A5A5A'
 })
 
 export let urlIcon = css({
@@ -179,9 +187,24 @@ let disappear = css.keyframes({
   }
 })
 
+export let cardBackgroundImage = css({
+  margin: '0 auto',
+  width: '99%',
+  height: '3em',
+  backgroundImage: 'url(https://scontent-lax3-1.cdninstagram.com/t51.2885-15/e15/12445909_989917981084297_402039653_n.jpg?ig_cache_key=Mjk1MzIzNjMwNTI0NjgxMjk4.2)',
+  backgroundRepeat: 'no-repeat',
+  backgroundSize: 'cover',
+  backgroundPosition: '0 -100px',
+  filter: 'grayScale(100%)'
+})
+
 /* custom banner styles */
 export let info = css({
   animation: `${disappear} 7s cubic-bezier(.95,-0.19,.39,1.13) forwards`,
+})
+
+export let bannerPromotion = css(spacing, {
+  textAlign: 'center'
 })
 
 export let newForm = css(container, {
@@ -206,7 +229,6 @@ css.global('html, body',  {
   backgroundColor: 'pink',
   fontFamily: 'Open Sans',
   fontSize: 'calc(1.75vw + 1.75vh)',
-  letterSpacing: '0.25em',
   color: '#3A3A3A'
 })
 

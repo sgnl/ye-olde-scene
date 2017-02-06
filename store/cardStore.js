@@ -1,7 +1,10 @@
 
 import { observable, computed, action, toJS } from 'mobx'
 import { css } from 'glamor'
-import { info } from '../styles'
+import {
+  info,
+  bannerPromotion
+ } from '../styles'
 
 
 let store = null
@@ -21,6 +24,7 @@ class CardStore {
         message: `💁🏽
         USE THE SEARCH TO FILTER`,
         styles: css(info, {
+          padding: '0 5px',
           textAlign: 'center'
         })
       },
@@ -31,14 +35,15 @@ class CardStore {
           ['bandcamp', 'beaman.bandcamp.com'],
           ['facebook', 'www.facebook.com/upthebeaman']
         ],
-        biography: 'We write songs about politics and relationships... and sometimes farts.'
+        biography: 'We write songs about politics and relationships... and sometimes farts.',
+        images: [
+          'scontent-lax3-1.cdninstagram.com/t51.2885-15/e15/12445909_989917981084297_402039653_n.jpg?ig_cache_key=Mjk1MzIzNjMwNTI0NjgxMjk4.2'
+        ]
       },
       {
         isBanner: 'PROMOTION',
         message: 'THIS IS A SPECIAL PROMOTION FOR AN EVENT',
-        styles: css({
-          textAlign: 'center'
-        })
+        styles: bannerPromotion
       },
       {
         artist_name: 'Poncho',
