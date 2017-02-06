@@ -1,16 +1,25 @@
 
 import { Component } from 'react'
 import { inject, observer } from 'mobx-react'
-import { grid, card } from '../styles'
+import { css } from 'glamor'
+import { grid, card, cardHeader, genreList } from '../styles'
 
-export default inject("store")(({ store }) => {
+export default inject("store")(observer(({ store }) => {
+  let cards;
 
+  if (store.filterString.length) {
+    cards = store.filteredCards;
+  } else {
+    cards = store.cards
+  }
+
+  console.log('cards: ', cards.length);
   return (
     <section {...grid}>
       {
-        store.cards.map((c,i) => <article {...card} key={i}>
-          <header><h2>{c.artist_name}</h2></header>
-          <ul>
+        cards.map((c,i) => <article {...card} key={i}>
+          <header><h2 { ...cardHeader }>{c.artist_name}</h2></header>
+          <ul { ...genreList}>
             {c.genres.map((g, i) => <li key={i}>{g}</li>)}
           </ul>
           <ul>
@@ -21,4 +30,4 @@ export default inject("store")(({ store }) => {
       }
     </section>
   )
-})
+}))

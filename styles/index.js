@@ -102,7 +102,6 @@ let bounce = css.keyframes({
 export let grid = css(container, {
   display: 'flex',
   flexFlow: 'row wrap',
-  justifyContent: 'stretch',
   paddingTop: '40vh',
   paddingLeft: '10px',
   paddingRight: '10px',
@@ -113,10 +112,22 @@ export let grid = css(container, {
 // paddingTop: '200%',
 
 export let card = css({
-  backgroundColor: 'salmon',
   marginBottom: '5%',
-  borderTop: '1px solid #333',
-  borderBottom: '1px solid #333'
+  padding: '2em 0.5em',
+  backgroundColor: 'salmon',
+  borderTop: '3px solid #5A5A5A'
+})
+
+export let cardHeader = css({
+
+})
+
+export let genreList = css({
+  margin: '0.75em 0',
+  paddingTop: '0.5em',
+  paddingBottom: '0.5em',
+  paddingLeft: '1em',
+  borderLeft: '2px solid #bbb',
 })
 
 export let newForm = css(container, {

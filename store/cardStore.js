@@ -1,12 +1,17 @@
 
-import { observable } from 'mobx'
+import { observable, computed, action } from 'mobx'
 
 let store = null
 
 class CardStore {
   @observable cards
+  @observable isSearching
+  @observable filterString
+  @observable filteredCards
 
   constructor(isServer, lastUpdate) {
+    this.filterString = []
+    this.filteredCards = []
     this.cards = [
       {
         artist_name: 'Beaman',
@@ -69,6 +74,23 @@ class CardStore {
       }
     ]
     this.lastUpdate = lastUpdate
+    this.updateFilteredCards = this.updateFilteredCards.bind(this)
+  }
+
+  updateFilterString(value) {
+    this.filterString = value
+    const newFilteredCardsState = [].concat(this.updateFilteredCards())
+    return this.filteredCards = newFilteredCardsState;
+  }
+
+  updateFilteredCards() {
+    return this.cards.filter(({ artist_name }) => this.fuzzyMatch(artist_name, this.filterString));
+  }
+
+  fuzzyMatch (str,pattern) {
+    pattern = pattern.split("").reduce(function(a,b){ return a+".*"+b; });
+    console.log('pattern: ', pattern);
+    return (new RegExp(pattern)).test(str);
   }
 }
 
