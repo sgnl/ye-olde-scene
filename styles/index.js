@@ -137,17 +137,20 @@ export let cardHeader = css({
 
 export let genreList = css({
   display: 'flex',
+  flexFlow: 'row wrap',
+  justifyContent: 'space-between',
   paddingTop: '0.5em',
   paddingBottom: '1em',
 })
 
 export let genreItem = css({
-  width: '100%',
+  width: '49%',
+  marginBottom: '0.25em',
   padding: '7px',
-  marginRight: '5px',
   backgroundColor: '#5A5A5A',
   lineHeight: '14px',
-  color: '#aaabbb'
+  color: '#aaabbb',
+  textAlign: 'center'
 })
 
 export let cardBio = css(spacing, {
@@ -199,7 +202,8 @@ export let cardBackgroundImage = css({
 })
 
 /* custom banner styles */
-export let info = css({
+export let infoSlideUp = css(spacing, {
+  width: '100%',
   animation: `${disappear} 7s cubic-bezier(.95,-0.19,.39,1.13) forwards`,
 })
 

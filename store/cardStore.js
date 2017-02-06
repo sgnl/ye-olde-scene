@@ -2,7 +2,7 @@
 import { observable, computed, action, toJS } from 'mobx'
 import { css } from 'glamor'
 import {
-  info,
+  infoSlideUp,
   bannerPromotion
  } from '../styles'
 
@@ -23,14 +23,14 @@ class CardStore {
         isBanner: 'INFO',
         message: `💁🏽
         USE THE SEARCH TO FILTER`,
-        styles: css(info, {
-          padding: '0 5px',
-          textAlign: 'center'
+        styles: css(infoSlideUp, {
+          padding: '0 1em',
+          textAlign: 'center',
         })
       },
       {
         artist_name: 'Beaman',
-        genres: ['pop-punk', 'punk'],
+        genres: ['pop-punk', 'punk', 'pop-punk', 'punk'],
         websites: [
           ['bandcamp', 'beaman.bandcamp.com'],
           ['facebook', 'www.facebook.com/upthebeaman']
