@@ -15,6 +15,7 @@ export default class MyDocument extends Document {
           <title>ye olde scene - curating local music history</title>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link href="https://fonts.googleapis.com/css?family=Lato:300|Open+Sans" rel="stylesheet" />
+          <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
           <style dangerouslySetInnerHTML={{ __html: this.props.css }} />
         </Head>
         <body>

@@ -126,7 +126,8 @@ export let grid = css(container, {
 export let card = css({
   padding: '2em 0.5em',
   backgroundColor: 'salmon',
-  borderTop: '1px solid #5A5A5A'
+  borderTop: '1px solid #5A5A5A',
+  fontSize: '16px'
 })
 
 export let cardHeader = css({
@@ -134,6 +135,7 @@ export let cardHeader = css({
 })
 
 export let genreList = css({
+  display: 'flex',
   margin: '0.75em 0.125em',
   paddingTop: '0.5em',
   paddingBottom: '0.5em',
@@ -146,7 +148,23 @@ export let genreItem = css({
   padding: '7px',
   marginRight: '5px',
   backgroundColor: '#5A5A5A',
+  lineHeight: '12px',
   color: '#aaabbb'
+})
+
+export let cardBio = css({
+  margin: '0.75em 0.125em',
+  padding: '14px 0'
+})
+
+export let urlList = css({
+  display: 'flex',
+  justifyContent: 'space-around'
+})
+
+export let urlIcon = css({
+  minWidth: '2em',
+  textAlign: 'center'
 })
 
 /* Animations */

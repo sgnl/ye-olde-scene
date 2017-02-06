@@ -2,7 +2,8 @@
 import { Component } from 'react'
 import { inject, observer } from 'mobx-react'
 import { css } from 'glamor'
-import { grid, card, cardHeader, genreList, genreItem } from '../styles'
+import { grid, card, cardHeader, genreList, genreItem, cardBio, urlList, urlIcon } from '../styles'
+import FontAwesome from 'react-fontawesome'
 
 export default inject("store")(observer(({ store }) => {
   let cards;
@@ -24,10 +25,11 @@ export default inject("store")(observer(({ store }) => {
                 <ul { ...genreList}>
                   {c.genres.map((g, i) => <li { ...genreItem } key={i}>{g}</li>)}
                 </ul>
-                <ul>
-                  {c.websites.map((g, i) => <li key={i}>{g[0]}</li>)}
+                <p { ...cardBio }>{c.biography}</p>
+                <ul { ...urlList} >
+                  {c.websites.map((g, i) => <li key={i}><FontAwesome { ...urlIcon } name={g[0]} />{g[0]}</li>)}
+
                 </ul>
-                <p>{c.biography}</p>
               </article>
             )
           }
