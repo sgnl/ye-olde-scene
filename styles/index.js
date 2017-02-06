@@ -114,7 +114,6 @@ export let grid = css(container, {
 // paddingTop: '200%',
 
 export let card = css({
-  marginBottom: '5%',
   padding: '2em 0.5em',
   backgroundColor: 'salmon',
   borderTop: '1px solid #5A5A5A'
