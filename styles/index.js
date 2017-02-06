@@ -1,5 +1,6 @@
 
 import { css, fontFace } from 'glamor'
+import styled, { keyframes } from 'styled-components'
 
 /**
  * Style Guide
@@ -23,25 +24,25 @@ const spacing = css({
   margin: '1.5em 0.125em'
 })
 
-export let frame = css({
-  padding: '0'
-})
+export const Frame = styled.div`
+  padding: 0
+`
 
-export let header = css({
-  position: 'fixed',
-  left: '0',
-  right: '0',
-  zIndex: '9999',
-  background: 'pink'
-})
+export const Header = styled.header`
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: pink;
+`
 
-export let logo = css({
-  width: '50%',
-  margin: '0 auto',
-  padding: '0.5em 0',
-  textAlign: 'center',
-  fontSize: '18px'
-})
+export const Logo = styled.h1`
+  width: 50%;
+  margin: 0 auto;
+  padding: 0.5em 0;
+  textAlign: center;
+  fontSize: 18px;
+`
 
 export let nav = css(container, {
   display: 'flex',
@@ -55,9 +56,9 @@ export let form = css({
   padding: '0.25em'
 })
 
-export let filterSection = css({
-  backgroundColor: 'salmon'
-})
+export const FilterSection = styled.div`
+  background-color: salmon;
+`
 
 export let filterInput = css({
   width: '100%',
@@ -81,104 +82,104 @@ export let outputCount = css({
   textAlign: 'center'
 })
 
-export let mainSection = css({
-  display: 'flex',
-  flexDirection: 'column',
-  flexWrap: 'nowrap',
-  justifyContent: 'stretch',
-  paddingTop: '25%',
-  backgroundColor: 'salmon'
-})
+export const MainSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: stretch;
+  padding-top: 25%;
+  background-color: salmon;
+`
 
-let bounce = css.keyframes({
-  '0%': {
-    transform: 'scaleY(0.1)'
-  },
-  '40%': {
-    transform: 'scaleY(1.02)'
-  },
-  '60%': {
-    transform: 'scaleY(0.98)'
-  },
-  '80%': {
-    transform: 'scaleY(1.01)'
-  },
-  '100%': {
-    transform: 'scaleY(0.98)'
-  },
-  '80%': {
-    transform: 'scaleY(1.01)'
-  },
-  '100%': {
-    transform: 'scaleY(1)'
+const bounce = keyframes`
+  0% {
+    transform: scaleY(0.1);
   }
-})
-
-let shrinkTopPadding = css.keyframes({
-  '0%': {
-    paddingTop: '20vh',
-  },
-  '100%': {
-    paddingTop: '0vh',
+  40% {
+    transform: scaleY(1.02);
   }
-})
+  60% {
+    transform: scaleY(0.98);
+  }
+  80% {
+    transform: scaleY(1.01);
+  }
+  100% {
+    transform: scaleY(0.98);
+  }
+  80% {
+    transform: scaleY(1.01);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+`
 
-export let grid = css(container, {
-  display: 'flex',
-  flexFlow: 'row wrap',
-  animation: `${bounce} 2s ease, ${shrinkTopPadding} 7s cubic-bezier(.95,-0.19,.39,1.13) forwards`
-})
+const shrinkTopPadding = keyframes`
+  0% {
+    padding-top: 20vh;
+  }
+  100% {
+    padding-top: 0vh;
+  }
+`
 
-export let card = css({
-  width: '100%',
-  padding: '2.5em 0.5em',
-  backgroundColor: 'salmon',
-  borderTop: '1px solid rgba(0, 0, 0, 0.1)',
-  fontSize: '16px'
-})
+export const Grid = styled.section`
+  display: flex;
+  flex-flow: row wrap;
+  animation: ${bounce} 2s ease, ${shrinkTopPadding} 7s cubic-bezier(.95,-0.19,.39,1.13) forwards;
+`
 
-export let cardHeader = css({
-  padding: '0 0 0.125em 0',
-  fontWeight: '700'
-})
+export const Card = styled.article`
+  width: 100%;
+  padding: 2.5em 0.5em;
+  background-color: salmon;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+`
 
-export let genreList = css({
-  display: 'flex',
-  flexFlow: 'row wrap',
-  justifyContent: 'space-between',
-  paddingTop: '0.5em',
-  paddingBottom: '1em',
-})
+export const CardHeader = styled.h2`
+  padding: 0 0 0.125em 0;
+  font-weight: 700;
+`
 
-export let genreItem = css({
-  width: '49%',
-  marginBottom: '0.25em',
-  padding: '7px',
-  backgroundColor: '#5A5A5A',
-  lineHeight: '14px',
-  color: '#aaabbb',
-  textAlign: 'center'
-})
+export const GenreList = styled.ul`
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding-top: 0.5em;
+  padding-bottom: 1em;
+`
 
-export let cardBio = css(spacing, {
-  paddingTop: '1em',
-  paddingBottom: '1em',
-  paddingLeft: '1em',
-  borderLeft: '2px solid #5A5A5A',
-  color: '#222'
-})
+export const GenreItem = styled.li`
+  width: 49%;
+  margin-bottom: 0.25em;
+  padding: 7px;
+  background-color: #5A5A5A;
+  lineHeight: 14px;
+  color: #aaabbb;
+  text-align: center;
+`
 
-export let urlList = css(spacing, {
-  display: 'flex',
-  justifyContent: 'space-around',
-  color: '#5A5A5A',
-  fontSize: '14px',
-  fontWeight: '700'
-})
+export const CardBio = styled.p`
+  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-left: 1em;
+  border-left: 2px solid #5A5A5A;
+  color: #222;
+`
 
-export let urlItem = css({
-  borderBottom: '1px solid #5A5A5A'
-})
+export const UrlList = styled.ul`
+  display: flex;
+  justify-content: space-around;
+  color: #5A5A5A;
+  font-size: 14px;
+  font-weight: 700;
+`
+
+export const UrlItem = styled.li`
+  border-bottom: 1px solid #5A5A5A;
+`
 
 export let urlIcon = css({
   minWidth: '2em',
@@ -197,16 +198,16 @@ let disappear = css.keyframes({
   }
 })
 
-export let cardBackgroundImage = css({
-  margin: '0 auto',
-  width: '99%',
-  height: '3em',
-  backgroundImage: 'url(https://scontent-lax3-1.cdninstagram.com/t51.2885-15/e15/12445909_989917981084297_402039653_n.jpg?ig_cache_key=Mjk1MzIzNjMwNTI0NjgxMjk4.2)',
-  backgroundRepeat: 'no-repeat',
-  backgroundSize: 'cover',
-  backgroundPosition: '0 -100px',
-  filter: 'grayScale(100%)'
-})
+export const ImageBanner = styled.div`
+  margin: 0 auto;
+  width: 99%;
+  height: 3em;
+  background-image: url(https://scontent-lax3-1.cdninstagram.com/t51.2885-15/e15/12445909_989917981084297_402039653_n.jpg?ig_cache_key=Mjk1MzIzNjMwNTI0NjgxMjk4.2);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 -100px;
+  filter: grayScale(100%);
+`
 
 /* custom banner styles */
 export let infoSlideUp = css(spacing, {
@@ -222,13 +223,15 @@ export let newForm = css(container, {
 
 })
 
-export let footerStyle = css(container, {
-  display: 'flex',
-  justifyContent: 'center',
-  padding: '1em 0',
-  textAlign: 'center',
-  fontSize: '12px'
-})
+export const Footer = styled.footer`
+  display: flex;
+  justifyContent: center;
+  padding: 1em 0;
+  maxWidth: 1200px;
+  margin: 0 auto;
+  textAlign: center;
+  fontSize: 12px;
+`
 
 css.global('*',  {
   padding: '0',
