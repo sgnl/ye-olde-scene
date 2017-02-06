@@ -30,7 +30,7 @@ class CardStore {
       },
       {
         artist_name: 'Beaman',
-        genres: ['pop-punk', 'punk', 'pop-punk', 'punk'],
+        genres: ['pop-punk', 'punk', 'failed-orbit-records'],
         websites: [
           ['bandcamp', 'beaman.bandcamp.com'],
           ['facebook', 'www.facebook.com/upthebeaman']
