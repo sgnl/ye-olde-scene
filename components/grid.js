@@ -60,11 +60,10 @@ export default inject("store")(observer(({ store }) => {
                       <UrlItem key={ i }>
                         <FontAwesome
                           name={ g[0] }
-                          size='1x'
                           ariaLabel={ g[0]}
                           fixedWidth
                         />
-                        <span >{ g[0] }</span>
+                        <span >&nbsp;{ g[0] }</span>
                       </UrlItem>
                     )
                   })}
