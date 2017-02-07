@@ -1,7 +1,7 @@
 
 import { Component } from 'react'
 import { inject, observer } from 'mobx-react'
-import { css } from 'glamor'
+import styled from 'styled-components'
 import {
   Grid,
   Card,
@@ -9,7 +9,8 @@ import {
   GenreList,
   GenreItem,
   CardBio,
-  ImageBanner,
+  imageBannerConstructor,
+  DefaultImageBanner,
   UrlList,
   UrlItem,
   urlIcon
@@ -30,11 +31,21 @@ export default inject("store")(observer(({ store }) => {
       {
         cards.map((c,i) => {
           if (!c.hasOwnProperty('isBanner')) {
+            let ImageBanner;
+
+            if (c.hasOwnProperty('images')) {
+              ImageBanner = styled.div`
+                ${imageBannerConstructor(c.images[0])}
+                background-position: ${c.css.imgBackgroundPosition[0]} ${c.css.imgBackgroundPosition[1]}
+              `
+            } else {
+              ImageBanner = DefaultImageBanner
+            }
             return (
               <Card key={ i }>
                 <header>
                   <CardHeader>{ c.artist_name }</CardHeader>
-                  <ImageBanner></ImageBanner>
+                  <ImageBanner />
                 </header>
                 <GenreList>
                   { c.genres.map((g, i) => <GenreItem key={ i } onClick={(e) => store.updateFilterString(e.target.innerHTML)}>{ g }</GenreItem>)}

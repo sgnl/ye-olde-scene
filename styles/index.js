@@ -71,10 +71,6 @@ export const FilterInput = styled.input`
   text-align: center;
   border-radius: 3px;
   letterSpacing: 0.25em;
-  ::placeholder: {
-    color: #777;
-    fontSize: 12px;
-  }
 `
 
 export const FilterCount = styled.p`
@@ -206,7 +202,21 @@ let disappear = keyframes`
   }
 `
 
-export const ImageBanner = styled.div`
+export const imageBannerConstructor = (url) => {
+  return `
+    margin: 0 auto;
+    width: 99%;
+    height: 3em;
+    background-image: url(//${ url });
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-top: 5px solid #ddd;
+    border-bottom: 5px solid #ddd;
+    filter: grayScale(100%);
+  `
+}
+
+export const DefaultImageBanner = styled.div`
   margin: 0 auto;
   width: 99%;
   height: 3em;
