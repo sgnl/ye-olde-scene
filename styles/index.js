@@ -18,17 +18,15 @@ import { injectGlobal, container, spacing } from './utils.js'
 /* misc global resets */
 
 export const Frame = styled.div`
-  padding: 0
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  min-height: 100vh;
 `
 
 export const Header = styled.header`
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
   z-index: 9999;
   background: pink;
-  box-shadow: 0px 13px 13px -8px salmon;
 `
 
 export const Logo = styled.h1`
@@ -65,7 +63,6 @@ export const FilterInput = styled.input`
   width: 60%;
   background: #fcaca3;
   padding: 0.5em 0.5em;
-  box-shadow: 0px 13px 13px -8px salmon;
   color: #333;
   font-size: 16px;
   text-align: center;
@@ -75,17 +72,18 @@ export const FilterInput = styled.input`
 
 export const FilterCount = styled.p`
   padding: 0.5em 0;
-  box-shadow: 0px 6px 14px -5px salmon;
   text-align: center;
   font-size: 12px;
-  color: #bbb;
+  color: #FBA298;
 `
 
 export const MainSection = styled.div`
+  flex: 1;
+
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  justify-content: stretch;
+  justify-content: center;
   background-color: salmon;
 `
 
@@ -157,7 +155,7 @@ export const GenreItem = styled.li`
   padding: 7px;
   background-color: #5A5A5A;
   lineHeight: 14px;
-  color: #aaabbb;
+  color: #fcaca3;
   text-align: center;
 `
 
@@ -175,19 +173,14 @@ export const UrlList = styled.ul`
   justify-content: space-around;
   padding-top: 1em;
   padding-bottom: 1em;
-  color: #5A5A5A;
+  color: #A05249;
   font-size: 14px;
 `
 
 export const UrlItem = styled.li`
-  border-bottom: 1px solid #5A5A5A;
   font-weight: 700;
+  line-height: 24px;
 `
-
-export let urlIcon = css({
-  minWidth: '2em',
-  textAlign: 'center'
-})
 
 /* Animations */
 let disappear = keyframes`
@@ -246,9 +239,10 @@ export const StillBanner = styled.p`
 export const Footer = styled.footer`
   display: flex;
   justifyContent: center;
-  padding: 1em 0;
-  maxWidth: 1200px;
   margin: 0 auto;
+  padding: 1em 0;
+  width: 100%;
+  background: #bbb;
   textAlign: center;
-  fontSize: 12px;
+  fontSize: 6px;
 `

@@ -41,6 +41,7 @@ export default inject("store")(observer(({ store }) => {
             } else {
               ImageBanner = DefaultImageBanner
             }
+
             return (
               <Card key={ i }>
                 <header>
@@ -57,8 +58,13 @@ export default inject("store")(observer(({ store }) => {
                   { c.websites.map((g, i) => {
                     return (
                       <UrlItem key={ i }>
-                        <FontAwesome { ...urlIcon } name={ g[0] } />
-                        { g[0] }
+                        <FontAwesome
+                          name={ g[0] }
+                          size='1x'
+                          ariaLabel={ g[0]}
+                          fixedWidth
+                        />
+                        <span >{ g[0] }</span>
                       </UrlItem>
                     )
                   })}

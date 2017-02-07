@@ -2,6 +2,7 @@
 import { Component } from 'react'
 import Link from 'next/link'
 import Head from 'next/head'
+import Headroom from 'react-headroom'
 import { Filter } from '../components'
 import {
   Frame,
@@ -31,19 +32,21 @@ export default class extends Component {
     const { children } = this.props
     return (
       <Frame>
-        <Header>
-          <Link href='/'>
-            <Logo>ye olde scene</Logo>
-          </Link>
-            {
-              /*
-              <Nav>
-                <Link href='/new'><a>new</a></Link>
-              </Nav>
-              */
-            }
-          <Filter store={this.store} />
-        </Header>
+        <Headroom>
+          <Header>
+            <Link href='/'>
+              <Logo>ye olde scene</Logo>
+            </Link>
+              {
+                /*
+                <Nav>
+                  <Link href='/new'><a>new</a></Link>
+                </Nav>
+                */
+              }
+            <Filter store={this.store} />
+          </Header>
+        </Headroom>
         <MainSection>
           { children }
         </MainSection>
