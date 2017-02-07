@@ -2,8 +2,8 @@
 import { observable, toJS } from 'mobx'
 import { css } from 'glamor'
 import {
-  infoSlideUp,
-  bannerPromotion
+  InfoSlideUp,
+  StillBanner
  } from '../styles'
 
 
@@ -23,10 +23,7 @@ class CardStore {
         isBanner: 'INFO',
         message: `💁🏽
         USE THE SEARCH TO FILTER`,
-        styles: css(infoSlideUp, {
-          padding: '0 1em',
-          textAlign: 'center',
-        })
+        component: InfoSlideUp
       },
       {
         artist_name: 'Beaman',
@@ -43,7 +40,7 @@ class CardStore {
       {
         isBanner: 'PROMOTION',
         message: 'THIS IS A SPECIAL PROMOTION FOR AN EVENT',
-        styles: bannerPromotion
+        component: StillBanner
       },
       {
         artist_name: 'Poncho',

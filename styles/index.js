@@ -1,6 +1,7 @@
 
 import { css, fontFace } from 'glamor'
 import styled, { keyframes } from 'styled-components'
+import { container, spacing } from './utils.js'
 
 /**
  * Style Guide
@@ -13,16 +14,6 @@ import styled, { keyframes } from 'styled-components'
  * 1. Typographic
  * 1. Visual
  */
-
-
-const container = css({
-  maxWidth: '1200px',
-  margin: '0 auto',
-})
-
-const spacing = css({
-  margin: '1.5em 0.125em'
-})
 
 export const Frame = styled.div`
   padding: 0
@@ -44,43 +35,45 @@ export const Logo = styled.h1`
   fontSize: 18px;
 `
 
-export let nav = css(container, {
-  display: 'flex',
-  padding: '2rem 0'
-})
+export let Nav = styled.nav`
+  ${ container }
+  display: flex;
+  padding: 2rem 0;
+`
 
-export let form = css({
-  display: 'flex',
-  justifyContent: 'center',
-  flexFlow: 'now wrap',
-  padding: '0.25em'
-})
+export const FilterForm = styled.form`
+  display: flex;
+  justify-content: center;
+  flex-flow: now wrap;
+  padding: 0.25em;
+`
 
 export const FilterSection = styled.div`
   background-color: salmon;
 `
 
-export let filterInput = css({
-  width: '100%',
-  background: '#fcaca3',
-  padding: '0.5em 0.5em',
-  border: '0',
-  color: '#333',
-  fontSize: '16px', // stay at >=16px because of safari's input zoom "feature"
-  textAlign: 'center',
-  borderRadius: '3px',
-  boxShadow: '0 1px 3px -1px #5A5A5A',
-  letterSpacing: '0.25em',
-  '::placeholder': {
-    color: '#777',
-    fontSize: '12px'
+// font-size must stay at >=16px because of safari's input zoom "feature"
+export const FilterInput = styled.input`
+  width: 100%;
+  background: #fcaca3;
+  padding: 0.5em 0.5em;
+  border: 0;
+  color: #333;
+  font-size: 16px;
+  text-align: center;
+  border-radius: 3px;
+  box-shadow: 0 1px 3px -1px #5A5A5A;
+  letterSpacing: 0.25em;
+  ::placeholder: {
+    color: #777;
+    fontSize: 12px;
   }
-})
+`
 
-export let outputCount = css({
-  padding: '0.5em 0',
-  textAlign: 'center'
-})
+export const FilterCount = styled.p`
+  padding: 0.5em 0;
+  text-align: center;
+`
 
 export const MainSection = styled.div`
   display: flex;
@@ -187,16 +180,16 @@ export let urlIcon = css({
 })
 
 /* Animations */
-let disappear = css.keyframes({
-  from: {
-    opacity: '1'
-  },
-
-  to: {
-    opacity: '0',
-    transform: 'translate3d(0, -100%, 0)'
+let disappear = keyframes`
+  from {
+    opacity: 1;
   }
-})
+
+  to {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+`
 
 export const ImageBanner = styled.div`
   margin: 0 auto;
@@ -210,18 +203,17 @@ export const ImageBanner = styled.div`
 `
 
 /* custom banner styles */
-export let infoSlideUp = css(spacing, {
-  width: '100%',
-  animation: `${disappear} 7s cubic-bezier(.95,-0.19,.39,1.13) forwards`,
-})
+export const InfoSlideUp = styled.p`
+  ${ spacing }
+  width: 100%;
+  padding: 0 1em;
+  textAlign: center;
+  animation: ${disappear} 7s cubic-bezier(.95,-0.19,.39,1.13) forwards;
+`
 
-export let bannerPromotion = css(spacing, {
-  textAlign: 'center'
-})
-
-export let newForm = css(container, {
-
-})
+export const StillBanner = styled.p`
+  text-align: center;
+`
 
 export const Footer = styled.footer`
   display: flex;

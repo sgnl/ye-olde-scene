@@ -7,7 +7,7 @@ import {
   Frame,
   Header,
   Logo,
-  nav,
+  // Nav,
   topHeader,
   MainSection,
   Footer
@@ -35,9 +35,13 @@ export default class extends Component {
           <Link href='/'>
             <Logo>ye olde scene</Logo>
           </Link>
-          {/*<nav { ...nav }>
-                  <Link href='/new'><a>new</a></Link>
-                </nav>*/}
+            {
+              /*
+              <Nav>
+                <Link href='/new'><a>new</a></Link>
+              </Nav>
+              */
+            }
           <Filter store={this.store} />
         </Header>
         <MainSection>

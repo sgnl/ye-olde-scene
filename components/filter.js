@@ -1,6 +1,6 @@
 
 import { css } from 'glamor'
-import { form, FilterSection, filterInput, outputCount } from '../styles'
+import { FilterForm, FilterSection, FilterInput, FilterCount } from '../styles'
 import { inject, observer } from 'mobx-react'
 
 export default inject('store')(observer(({ store }) => {
@@ -12,10 +12,10 @@ export default inject('store')(observer(({ store }) => {
 
   return (
     <FilterSection>
-      <form { ...form }>
-        <input { ...filterInput } autoFocus value={ store.filterString.join('') } placeholder="[ search here ]" onChange={ (e) => store.updateFilterString(e.target.value) } />
-      </form>
-      <p { ...outputCount }>{ output }</p>
+      <FilterForm>
+        <FilterInput autoFocus value={ store.filterString.join('') } placeholder="[ search here ]" onChange={ (e) => store.updateFilterString(e.target.value) } />
+      </FilterForm>
+      <FilterCount>{ output }</FilterCount>
     </FilterSection>
   )
 }))
