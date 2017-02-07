@@ -1,17 +1,18 @@
 
 import { Component } from 'react'
 import { inject, observer } from 'mobx-react'
-import { css } from 'glamor'
+import styled from 'styled-components'
 import {
-  grid,
-  card,
-  cardHeader,
-  genreList,
-  genreItem,
-  cardBio,
-  cardBackgroundImage,
-  urlList,
-  urlItem,
+  Grid,
+  Card,
+  CardHeader,
+  GenreList,
+  GenreItem,
+  CardBio,
+  imageBannerConstructor,
+  DefaultImageBanner,
+  UrlList,
+  UrlItem,
   urlIcon
 } from '../styles'
 import FontAwesome from 'react-fontawesome'
@@ -26,43 +27,64 @@ export default inject("store")(observer(({ store }) => {
   }
 
   return (
-    <section {...grid}>
+    <Grid>
       {
         cards.map((c,i) => {
           if (!c.hasOwnProperty('isBanner')) {
+            let ImageBanner;
+
+            if (c.hasOwnProperty('images')) {
+              ImageBanner = styled.div`
+                ${imageBannerConstructor(c.images[0])}
+                background-position: ${c.css.imgBackgroundPosition[0]} ${c.css.imgBackgroundPosition[1]}
+              `
+            } else {
+              ImageBanner = DefaultImageBanner
+            }
+
             return (
-              <article { ...card } key={ i }>
+              <Card key={ i }>
                 <header>
-                  <h2 { ...cardHeader }>{ c.artist_name }</h2>
-                  <ul { ...css({ display: 'inline' }) }>
-                    <li {  ...cardBackgroundImage }></li>
-                  </ul>
+                  <CardHeader>{ c.artist_name }</CardHeader>
+                  <ImageBanner />
                 </header>
-                <ul { ...genreList}>
-                  { c.genres.map((g, i) => <li { ...genreItem } key={ i } onClick={(e) => store.updateFilterString(e.target.innerHTML)}>{ g }</li>)}
-                </ul>
+                <GenreList>
+                  { c.genres.map((g, i) => <GenreItem key={ i } onClick={(e) => store.updateFilterString(e.target.innerHTML)}>{ g }</GenreItem>)}
+                </GenreList>
                 {
-                  !c.biography ? '' : <p { ...cardBio }>{ c.biography }</p>
+                  !c.biography ? '' : <CardBio>{ c.biography }</CardBio>
                 }
-                <ul { ...urlList} >
-                  { c.websites.map((g, i) => <li { ...urlItem } key={ i }><FontAwesome { ...urlIcon } name={ g[0] } />{ g[0] }</li>) }
-                </ul>
-              </article>
+                <UrlList>
+                  { c.websites.map((g, i) => {
+                    return (
+                      <UrlItem key={ i }>
+                        <FontAwesome
+                          name={ g[0] }
+                          size='1x'
+                          ariaLabel={ g[0]}
+                          fixedWidth
+                        />
+                        <span >{ g[0] }</span>
+                      </UrlItem>
+                    )
+                  })}
+                </UrlList>
+              </Card>
             )
           }
 
-          switch (c.isBanner) {
+          let BannerComponent = c.component;
+
+        switch (c.isBanner) {
             case 'INFO':
               return (
-                <article { ...c.styles } key={ i }>
-                  <p>{ c.message }</p>
-                </article>
+                  <BannerComponent key={ i }>{ c.message }</BannerComponent>
               )
             case 'PROMOTION':
               return (
-                <article { ...card } key={i}>
-                  <p { ...c.styles }>{ c.message }</p>
-                </article>
+                <Card key={i}>
+                  <BannerComponent>{ c.message }</BannerComponent>
+                </Card>
               )
             default:
               return (
@@ -73,6 +95,6 @@ export default inject("store")(observer(({ store }) => {
           }
         })
       }
-    </section>
+    </Grid>
   )
 }))

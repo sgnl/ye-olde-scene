@@ -2,15 +2,16 @@
 import { Component } from 'react'
 import Link from 'next/link'
 import Head from 'next/head'
+import Headroom from 'react-headroom'
 import { Filter } from '../components'
 import {
-  frame,
-  header,
-  logo,
-  nav,
+  Frame,
+  Header,
+  Logo,
+  // Nav,
   topHeader,
-  mainSection,
-  footer
+  MainSection,
+  Footer
 } from '../styles'
 
 import { initStore } from '../store/cardStore'
@@ -30,23 +31,29 @@ export default class extends Component {
   render () {
     const { children } = this.props
     return (
-      <div { ...frame }>
-        <header { ...header }>
-          <Link href='/'>
-            <h1 { ...logo }>ye olde scene</h1>
-          </Link>
-          {/*<nav { ...nav }>
+      <Frame>
+        <Headroom>
+          <Header>
+            <Link href='/'>
+              <Logo>ye olde scene</Logo>
+            </Link>
+              {
+                /*
+                <Nav>
                   <Link href='/new'><a>new</a></Link>
-                </nav>*/}
-          <Filter store={this.store} />
-        </header>
-        <div { ...mainSection}>
+                </Nav>
+                */
+              }
+            <Filter store={this.store} />
+          </Header>
+        </Headroom>
+        <MainSection>
           { children }
-        </div>
-        <footer { ...footer }>
+        </MainSection>
+        <Footer>
           <p>coded with aloha</p>
-        </footer>
-      </div>
+        </Footer>
+      </Frame>
     )
   }
 }

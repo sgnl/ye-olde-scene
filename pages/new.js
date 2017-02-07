@@ -1,6 +1,6 @@
 
 import Layout from '../components/layout'
-import { newForm } from '../styles'
+// import {  } from '../styles'
 
 export default () => {
   return (
