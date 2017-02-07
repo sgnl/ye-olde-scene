@@ -27,7 +27,7 @@ class CardStore {
       },
       {
         artist_name: 'Beaman',
-        genres: ['pop-punk', 'punk', 'failed-orbit-records'],
+        genres: ['pop-punk', 'punk'],
         websites: [
           ['bandcamp', 'beaman.bandcamp.com'],
           ['facebook', 'www.facebook.com/upthebeaman']
@@ -61,7 +61,7 @@ class CardStore {
       },
       {
         artist_name: 'T.V. Microwave',
-        genres: ['pop-punk', 'punk', 'rock'],
+        genres: ['pop-punk', 'rock'],
         websites: [
           ['bandcamp', 'tvmicrowave.bandcamp.com'],
           ['facebook', 'www.facebook.com/tvmicrowave']
@@ -70,7 +70,7 @@ class CardStore {
       },
       {
         artist_name: 'Nerve Beats',
-        genres: ['experimental', 'art-punk', 'post-punk'],
+        genres: ['experimental', 'art-punk'],
         websites: [
           ['bandcamp', 'nervebeats.bandcamp.com']
         ],
@@ -78,7 +78,7 @@ class CardStore {
       },
       {
         artist_name: 'Harshist',
-        genres: ['no-wave', 'post-punk', 'punk'],
+        genres: ['no-wave', 'post-punk'],
         websites: [
           ['bandcamp', 'harshist.bandcamp.com']
         ],
@@ -86,7 +86,7 @@ class CardStore {
       },
       {
         artist_name: 'Siblings',
-        genres: ['hardcore', 'pop-punk', 'punk'],
+        genres: ['hardcore', 'punk'],
         websites: [
           ['bandcamp', 'siblingspunx.bandcamp.com']
         ],

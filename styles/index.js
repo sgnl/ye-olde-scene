@@ -28,21 +28,25 @@ export const Header = styled.header`
   left: 0;
   z-index: 9999;
   background: pink;
+  box-shadow: 0px 13px 13px -8px salmon;
 `
 
 export const Logo = styled.h1`
   width: 50%;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
   textAlign: center;
+  text-transform: lowercase;
   fontSize: 18px;
 `
 
 export let Nav = styled.nav`
   ${ container }
   display: flex;
-  padding: 2rem 0;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 `
 
 export const FilterForm = styled.form`
@@ -58,15 +62,14 @@ export const FilterSection = styled.div`
 
 // font-size must stay at >=16px because of safari's input zoom "feature"
 export const FilterInput = styled.input`
-  width: 100%;
+  width: 60%;
   background: #fcaca3;
   padding: 0.5em 0.5em;
-  border: 0;
+  box-shadow: 0px 13px 13px -8px salmon;
   color: #333;
   font-size: 16px;
   text-align: center;
   border-radius: 3px;
-  box-shadow: 0 1px 3px -1px #5A5A5A;
   letterSpacing: 0.25em;
   ::placeholder: {
     color: #777;
@@ -76,7 +79,10 @@ export const FilterInput = styled.input`
 
 export const FilterCount = styled.p`
   padding: 0.5em 0;
+  box-shadow: 0px 6px 14px -5px salmon;
   text-align: center;
+  font-size: 12px;
+  color: #bbb;
 `
 
 export const MainSection = styled.div`
@@ -84,7 +90,6 @@ export const MainSection = styled.div`
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: stretch;
-  padding-top: 25%;
   background-color: salmon;
 `
 
@@ -124,7 +129,7 @@ const shrinkTopPadding = keyframes`
 export const Grid = styled.section`
   display: flex;
   flex-flow: row wrap;
-  animation: ${bounce} 2s ease, ${shrinkTopPadding} 7s cubic-bezier(.95,-0.19,.39,1.13) forwards;
+  animation: ${bounce} 2s ease, ${shrinkTopPadding} 4s cubic-bezier(.95,-0.19,.39,1.13) forwards;
 `
 
 export const Card = styled.article`
@@ -136,8 +141,10 @@ export const Card = styled.article`
 `
 
 export const CardHeader = styled.h2`
-  padding: 0 0 0.125em 0;
+  padding-bottom: 0.125em;
+  text-align: center;
   font-weight: 700;
+  text-transform: uppercase;
 `
 
 export const GenreList = styled.ul`
@@ -159,6 +166,7 @@ export const GenreItem = styled.li`
 `
 
 export const CardBio = styled.p`
+  display: none;
   padding-top: 1em;
   padding-bottom: 1em;
   padding-left: 1em;
@@ -169,13 +177,15 @@ export const CardBio = styled.p`
 export const UrlList = styled.ul`
   display: flex;
   justify-content: space-around;
+  padding-top: 1em;
+  padding-bottom: 1em;
   color: #5A5A5A;
   font-size: 14px;
-  font-weight: 700;
 `
 
 export const UrlItem = styled.li`
   border-bottom: 1px solid #5A5A5A;
+  font-weight: 700;
 `
 
 export let urlIcon = css({
@@ -192,6 +202,7 @@ let disappear = keyframes`
   to {
     opacity: 0;
     transform: translate3d(0, -100%, 0);
+    display: none;
   }
 `
 
@@ -203,16 +214,19 @@ export const ImageBanner = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0 -100px;
+  border-top: 5px solid #ddd;
+  border-bottom: 5px solid #ddd;
   filter: grayScale(100%);
 `
 
 /* custom banner styles */
 export const InfoSlideUp = styled.p`
   ${ spacing }
+  margin: 2em 0.125em;
   width: 100%;
   padding: 0 1em;
   textAlign: center;
-  animation: ${disappear} 7s cubic-bezier(.95,-0.19,.39,1.13) forwards;
+  animation: ${disappear} 4s cubic-bezier(.95,-0.19,.39,1.13) forwards;
 `
 
 export const StillBanner = styled.p`
@@ -228,27 +242,3 @@ export const Footer = styled.footer`
   textAlign: center;
   fontSize: 12px;
 `
-
-// css.global('*',  {
-//   padding: '0',
-//   margin: '0',
-//   boxSizing: 'border-box'
-// })
-
-css.global('html, body',  {
-  backgroundColor: 'pink',
-  fontFamily: 'Open Sans',
-  fontSize: 'calc(1.75vw + 1.75vh)',
-  color: '#3A3A3A'
-})
-
-css.global('h1, h2, h3, h4, h5, h6, a', {
-  fontFamily: 'Lato',
-  fontWeight: '300',
-  fontSize: 'calc(2.3vw + 2.3vh)',
-  color: '#000'
-})
-
-css.global('ul', {
-  listStyleType: 'none'
-})
