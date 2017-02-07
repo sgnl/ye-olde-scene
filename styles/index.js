@@ -1,7 +1,7 @@
 
 import { css, fontFace } from 'glamor'
 import styled, { keyframes } from 'styled-components'
-import { container, spacing } from './utils.js'
+import { injectGlobal, container, spacing } from './utils.js'
 
 /**
  * Style Guide
@@ -15,14 +15,17 @@ import { container, spacing } from './utils.js'
  * 1. Visual
  */
 
+/* misc global resets */
+
 export const Frame = styled.div`
   padding: 0
 `
 
 export const Header = styled.header`
   position: fixed;
-  left: 0;
+  top: 0;
   right: 0;
+  left: 0;
   z-index: 9999;
   background: pink;
 `
@@ -30,7 +33,8 @@ export const Header = styled.header`
 export const Logo = styled.h1`
   width: 50%;
   margin: 0 auto;
-  padding: 0.5em 0;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
   textAlign: center;
   fontSize: 18px;
 `
@@ -44,7 +48,7 @@ export let Nav = styled.nav`
 export const FilterForm = styled.form`
   display: flex;
   justify-content: center;
-  flex-flow: now wrap;
+  flex-flow: row wrap;
   padding: 0.25em;
 `
 
@@ -225,11 +229,11 @@ export const Footer = styled.footer`
   fontSize: 12px;
 `
 
-css.global('*',  {
-  padding: '0',
-  margin: '0',
-  boxSizing: 'border-box'
-})
+// css.global('*',  {
+//   padding: '0',
+//   margin: '0',
+//   boxSizing: 'border-box'
+// })
 
 css.global('html, body',  {
   backgroundColor: 'pink',

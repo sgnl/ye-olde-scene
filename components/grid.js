@@ -61,7 +61,7 @@ export default inject("store")(observer(({ store }) => {
         switch (c.isBanner) {
             case 'INFO':
               return (
-                  <BannerComponent>{ c.message }</BannerComponent>
+                  <BannerComponent key={ i }>{ c.message }</BannerComponent>
               )
             case 'PROMOTION':
               return (
