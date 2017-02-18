@@ -2,6 +2,7 @@
 import { css, fontFace } from 'glamor'
 import styled, { keyframes } from 'styled-components'
 import { injectGlobal, container, spacing } from './utils.js'
+import { media } from './media-queries'
 
 /**
  * Style Guide

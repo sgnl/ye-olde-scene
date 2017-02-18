@@ -150,7 +150,7 @@ class CardStore {
   }
 
   artistNameReducer () {
-    return this.cards.filter(({ artist_name }) => this.fuzzyMatch(artist_name, this.filterString));
+    return this.cards.filter(({ artist_name }) => this.fuzzyMatch(artist_name, this.filterString))
   }
 
   genreReducer () {
@@ -160,9 +160,9 @@ class CardStore {
   }
 
   fuzzyMatch (str,pattern) {
-    pattern = pattern.reduce((a,b) => a + ".*" + b);
+    pattern = pattern.reduce((a,b) => a + ".*" + b)
     str = String(toJS(str))
-    return (new RegExp(pattern)).test(str.toLowerCase());
+    return (new RegExp(pattern)).test(str.toLowerCase())
   }
 }
 
