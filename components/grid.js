@@ -18,10 +18,10 @@ import {
 import FontAwesome from 'react-fontawesome'
 
 export default inject("store")(observer(({ store }) => {
-  let cards;
+  let cards
 
   if (store.filterString.length) {
-    cards = store.filteredCards;
+    cards = store.filteredCards
   } else {
     cards = store.cards
   }
@@ -31,7 +31,7 @@ export default inject("store")(observer(({ store }) => {
       {
         cards.map((c,i) => {
           if (!c.hasOwnProperty('isBanner')) {
-            let ImageBanner;
+            let ImageBanner
 
             if (c.hasOwnProperty('images')) {
               ImageBanner = styled.div`
@@ -72,7 +72,7 @@ export default inject("store")(observer(({ store }) => {
             )
           }
 
-          let BannerComponent = c.component;
+          let BannerComponent = c.component
 
         switch (c.isBanner) {
             case 'INFO':
