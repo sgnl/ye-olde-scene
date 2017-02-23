@@ -27,7 +27,7 @@ export const Frame = styled.div`
 
 export const Header = styled.header`
   z-index: 9999;
-  background: pink;
+  background-color: #fff;
 `
 
 export const Logo = styled.h1`
@@ -55,20 +55,18 @@ export const FilterForm = styled.form`
   padding: 0.25em;
 `
 
-export const FilterSection = styled.div`
-  background-color: salmon;
-`
+export const FilterSection = styled.div``
 
 // font-size must stay at >=16px because of safari's input zoom "feature"
 export const FilterInput = styled.input`
   width: 60%;
-  background: #fcaca3;
   padding: 0.5em 0.5em;
   color: #333;
   font-size: 16px;
   text-align: center;
+  letter-spacing: 0.25em;
   border-radius: 3px;
-  letterSpacing: 0.25em;
+  border: 1px solid #333;
 `
 
 export const FilterCount = styled.p`
@@ -80,12 +78,10 @@ export const FilterCount = styled.p`
 
 export const MainSection = styled.div`
   flex: 1;
-
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: center;
-  background-color: salmon;
 `
 
 const bounce = keyframes`
@@ -130,7 +126,6 @@ export const Grid = styled.section`
 export const Card = styled.article`
   width: 100%;
   padding: 2.5em 0.5em;
-  background-color: salmon;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   font-size: 16px;
 `
@@ -156,7 +151,7 @@ export const GenreItem = styled.li`
   padding: 7px;
   background-color: #5A5A5A;
   lineHeight: 14px;
-  color: #fcaca3;
+  color: #fff;
   text-align: center;
 `
 
@@ -174,7 +169,7 @@ export const UrlList = styled.ul`
   justify-content: space-around;
   padding-top: 1em;
   padding-bottom: 1em;
-  color: #A05249;
+  color: #333;
   font-size: 14px;
 `
 
@@ -204,9 +199,6 @@ export const imageBannerConstructor = (url) => {
     background-image: url(//${ url });
     background-repeat: no-repeat;
     background-size: cover;
-    border-top: 5px solid #ddd;
-    border-bottom: 5px solid #ddd;
-    filter: grayScale(100%);
   `
 }
 
