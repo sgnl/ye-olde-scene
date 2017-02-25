@@ -33,9 +33,7 @@ export default class extends Component {
       <Frame>
         <Headroom>
           <Header>
-            <Link href='/'>
-              <Logo>ye olde scene</Logo>
-            </Link>
+            <Logo>ye olde scene</Logo>
             <Filter store={this.store} />
           </Header>
         </Headroom>
