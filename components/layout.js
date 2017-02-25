@@ -8,7 +8,6 @@ import {
   Frame,
   Header,
   Logo,
-  // Nav,
   topHeader,
   MainSection,
   Footer
@@ -37,13 +36,6 @@ export default class extends Component {
             <Link href='/'>
               <Logo>ye olde scene</Logo>
             </Link>
-              {
-                /*
-                <Nav>
-                  <Link href='/new'><a>new</a></Link>
-                </Nav>
-                */
-              }
             <Filter store={this.store} />
           </Header>
         </Headroom>

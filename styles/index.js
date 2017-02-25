@@ -39,13 +39,9 @@ export const Logo = styled.h1`
   textAlign: center;
   text-transform: lowercase;
   fontSize: 18px;
-`
+  ${media.tablet`
 
-export let Nav = styled.nav`
-  ${ container }
-  display: flex;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  `}
 `
 
 export const FilterForm = styled.form`
