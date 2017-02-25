@@ -36,21 +36,27 @@ export const Header = styled.header`
   z-index: 9999;
   background-color: #eee;
   ${media.tablet`
-
+    flex-flow: row nowrap;
+    justify-content: space-between;
   `}
 `
 
 export const Logo = styled.h1`
   width: 50%;
-  margin-left: auto;
-  margin-right: auto;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
   textAlign: center;
   text-transform: lowercase;
   fontSize: 18px;
   ${media.tablet`
+    fontSize: 1.5em;
+  `}
+`
 
+export const FilterSection = styled.div`
+  ${media.tablet`
+    width: 50%;
+    padding-top: 0.5em;
   `}
 `
 
@@ -60,8 +66,6 @@ export const FilterForm = styled.form`
   flex-flow: row wrap;
   padding: 0.25em;
 `
-
-export const FilterSection = styled.div``
 
 // font-size must stay at >=16px because of safari's input zoom "feature"
 export const FilterInput = styled.input`
@@ -78,6 +82,9 @@ export const FilterCount = styled.p`
   padding: 0.5em 0;
   text-align: center;
   color: #FBA298;
+  ${media.tablet`
+    padding-top: 0;
+  `}
 `
 
 export const MainSection = styled.div`
