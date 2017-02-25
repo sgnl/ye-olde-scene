@@ -16,7 +16,7 @@ import { media } from './media-queries'
  * 1. Visual
  */
 
-/* misc global resets */
+const lightGrey = '#5A5A5A';
 
 export const Frame = styled.div`
   display: flex;
@@ -27,7 +27,7 @@ export const Frame = styled.div`
 
 export const Header = styled.header`
   z-index: 9999;
-  background-color: #fff;
+  background-color: #eee;
 `
 
 export const Logo = styled.h1`
@@ -149,19 +149,17 @@ export const GenreItem = styled.li`
   width: 49%;
   margin-bottom: 0.25em;
   padding: 7px;
-  background-color: #5A5A5A;
-  lineHeight: 14px;
+  background-color: ${lightGrey};
+  line-height: 14px;
   color: #fff;
   text-align: center;
 `
 
 export const CardBio = styled.p`
-  display: none;
   padding-top: 1em;
   padding-bottom: 1em;
   padding-left: 1em;
-  border-left: 2px solid #5A5A5A;
-  color: #222;
+  border-left: 2px solid ${lightGrey};
 `
 
 export const UrlList = styled.ul`
@@ -169,7 +167,6 @@ export const UrlList = styled.ul`
   justify-content: space-around;
   padding-top: 1em;
   padding-bottom: 1em;
-  color: #333;
   font-size: 14px;
 `
 
@@ -191,10 +188,9 @@ let disappear = keyframes`
   }
 `
 
+// refactor to use props!
 export const imageBannerConstructor = (url) => {
   return `
-    margin: 0 auto;
-    width: 99%;
     height: 3em;
     background-image: url(//${ url });
     background-repeat: no-repeat;
@@ -229,13 +225,15 @@ export const StillBanner = styled.p`
   text-align: center;
 `
 
+/****/
+
 export const Footer = styled.footer`
   display: flex;
   justifyContent: center;
   margin: 0 auto;
   padding: 1em 0;
   width: 100%;
-  background: #bbb;
+  background: ${lightGrey};
   textAlign: center;
   fontSize: 6px;
 `
