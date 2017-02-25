@@ -1,8 +1,12 @@
 
 import { css, fontFace } from 'glamor'
 import styled, { keyframes } from 'styled-components'
-import { injectGlobal, container, spacing } from './utils.js'
 import { media } from './media-queries'
+import {
+  injectGlobal,
+  container,
+  spacing
+} from './utils.js'
 
 /**
  * Style Guide
@@ -26,8 +30,14 @@ export const Frame = styled.div`
 `
 
 export const Header = styled.header`
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
   z-index: 9999;
   background-color: #eee;
+  ${media.tablet`
+
+  `}
 `
 
 export const Logo = styled.h1`
@@ -55,7 +65,6 @@ export const FilterSection = styled.div``
 
 // font-size must stay at >=16px because of safari's input zoom "feature"
 export const FilterInput = styled.input`
-  width: 60%;
   padding: 0.5em 0.5em;
   color: #333;
   font-size: 16px;
@@ -68,7 +77,6 @@ export const FilterInput = styled.input`
 export const FilterCount = styled.p`
   padding: 0.5em 0;
   text-align: center;
-  font-size: 12px;
   color: #FBA298;
 `
 
@@ -133,6 +141,30 @@ export const CardHeader = styled.h2`
   text-transform: uppercase;
 `
 
+// refactor to use props!
+export const imageBannerConstructor = (url) => {
+  return `
+    height: 3em;
+    background-image: url(//${ url });
+    background-repeat: no-repeat;
+    background-size: cover;
+    ${media.tablet`height: 6  em;`}
+  `
+}
+
+export const DefaultImageBanner = styled.div`
+  margin: 0 auto;
+  width: 99%;
+  height: 3em;
+  background-image: url(https://scontent-lax3-1.cdninstagram.com/t51.2885-15/e15/12445909_989917981084297_402039653_n.jpg?ig_cache_key=Mjk1MzIzNjMwNTI0NjgxMjk4.2);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 -100px;
+  border-top: 5px solid #ddd;
+  border-bottom: 5px solid #ddd;
+  filter: grayScale(100%);
+`
+
 export const GenreList = styled.ul`
   display: flex;
   flex-flow: row wrap;
@@ -182,29 +214,6 @@ let disappear = keyframes`
     transform: translate3d(0, -100%, 0);
     display: none;
   }
-`
-
-// refactor to use props!
-export const imageBannerConstructor = (url) => {
-  return `
-    height: 3em;
-    background-image: url(//${ url });
-    background-repeat: no-repeat;
-    background-size: cover;
-  `
-}
-
-export const DefaultImageBanner = styled.div`
-  margin: 0 auto;
-  width: 99%;
-  height: 3em;
-  background-image: url(https://scontent-lax3-1.cdninstagram.com/t51.2885-15/e15/12445909_989917981084297_402039653_n.jpg?ig_cache_key=Mjk1MzIzNjMwNTI0NjgxMjk4.2);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 0 -100px;
-  border-top: 5px solid #ddd;
-  border-bottom: 5px solid #ddd;
-  filter: grayScale(100%);
 `
 
 /* custom banner styles */
