@@ -40,11 +40,11 @@ class CardStore {
           imgBackgroundPosition: ['0', '-100px']
         }
       },
-      {
-        isBanner: 'PROMOTION',
-        message: 'THIS IS A SPECIAL PROMOTION FOR AN EVENT',
-        component: StillBanner
-      },
+      // {
+      //   isBanner: 'PROMOTION',
+      //   message: 'THIS IS A SPECIAL PROMOTION FOR AN EVENT',
+      //   component: StillBanner
+      // },
       {
         artist_name: 'Poncho',
         genres: ['psychadelic', 'rock'],

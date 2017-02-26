@@ -21,6 +21,7 @@ import {
  */
 
 const lightGrey = '#5A5A5A';
+const lighterGrey = '#7A7A7A';
 
 export const Frame = styled.div`
   display: flex;
@@ -50,6 +51,9 @@ export const Logo = styled.h1`
   fontSize: 18px;
   ${media.tablet`
     fontSize: 1.5em;
+  `}
+  ${media.desktop`
+    fontSize: 2em;
   `}
 `
 
@@ -131,11 +135,14 @@ const shrinkTopPadding = keyframes`
 export const Grid = styled.section`
   display: flex;
   flex-flow: column nowrap;
-  align-items: center;
+  align-items: stretch;
   animation: ${bounce} 2s ease, ${shrinkTopPadding} 4s cubic-bezier(.95,-0.19,.39,1.13) forwards;
   ${media.tablet`
     flex-flow: row wrap;
     justify-content: center;
+  `}
+  ${media.desktop`
+    justify-content: space-around;
   `}
 `
 
@@ -146,6 +153,10 @@ export const Card = styled.article`
     width: 45%;
     height: 325px;
   `}
+  ${media.desktop`
+    width: 45%;
+    height: 570px;
+  `}
 `
 
 export const CardHeader = styled.h2`
@@ -153,6 +164,10 @@ export const CardHeader = styled.h2`
   text-align: center;
   font-weight: 700;
   text-transform: uppercase;
+  ${media.desktop`
+    fontSize: 2em;
+    padding-bottom: 1.25em;
+  `}
 `
 
 export const imageBannerConstructor = (url) => {
@@ -161,7 +176,12 @@ export const imageBannerConstructor = (url) => {
     background-image: url(//${ url });
     background-repeat: no-repeat;
     background-size: cover;
-    ${media.tablet`height: 6em;`}
+    ${media.tablet`
+      height: 6em;
+    `}
+    ${media.desktop`
+      height: 18em;
+    `}
   `
 }
 
@@ -189,16 +209,25 @@ export const GenreItem = styled.li`
   margin-bottom: 0.25em;
   padding: 7px;
   background-color: ${lightGrey};
-  line-height: 14px;
   color: #fff;
   text-align: center;
+  &:hover {
+    cursor: pointer;
+  }
+  ${media.desktop`
+    fontSize: 1.5em;
+  `}
 `
 
 export const CardBio = styled.p`
   padding: 1em;
-  border-left: 3px solid ${lightGrey};
+  border-left: 3px solid ${lighterGrey};
   ${media.tablet`
     height: 95px;
+  `}
+  ${media.desktop`
+    height: 57px;
+    border-left: 3px solid ${lighterGrey};
   `}
 `
 
@@ -208,11 +237,18 @@ export const UrlList = styled.ul`
   padding-top: 1em;
   padding-bottom: 1em;
   font-size: 14px;
+  ${media.desktop`
+    padding: 1.5em 0;
+  `}
 `
 
-export const UrlItem = styled.li`
+export const UrlItem = styled.a`
   font-weight: 700;
   line-height: 24px;
+  text-decoration: none;
+  ${media.desktop`
+    fontSize: 1.5em;
+  `}
 `
 
 /* Animations */

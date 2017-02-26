@@ -57,14 +57,16 @@ export default inject("store")(observer(({ store }) => {
                 <UrlList>
                   { c.websites.map((g, i) => {
                     return (
-                      <UrlItem key={ i }>
-                        <FontAwesome
-                          name={ g[0] }
-                          ariaLabel={ g[0]}
-                          fixedWidth
-                        />
-                        <span >&nbsp;{ g[0] }</span>
-                      </UrlItem>
+                      <li key={ i }>
+                        <UrlItem href={ `//${g[1]}` }>
+                          <FontAwesome
+                            name={ g[0] }
+                            ariaLabel={ g[0]}
+                            fixedWidth
+                          />
+                          <span >&nbsp;{ g[0] }</span>
+                        </UrlItem>
+                      </li>
                     )
                   })}
                 </UrlList>
