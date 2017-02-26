@@ -140,12 +140,11 @@ export const Grid = styled.section`
 `
 
 export const Card = styled.article`
-  width: 45%;
-  height: 350px;
   padding: 2.5em 0.5em;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   ${media.tablet`
-
+    width: 45%;
+    height: 325px;
   `}
 `
 
