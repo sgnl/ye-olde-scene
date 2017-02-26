@@ -22,7 +22,7 @@ class CardStore {
       {
         isBanner: 'INFO',
         message: `💁🏽
-        USE THE SEARCH TO FILTER`,
+        USE THE SEARCH TO FILTER by name or genre`,
         component: InfoSlideUp
       },
       {
