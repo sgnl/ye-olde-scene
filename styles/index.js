@@ -238,7 +238,7 @@ export const InfoSlideUp = styled.p`
   animation: ${disappear} 4s cubic-bezier(.95,-0.19,.39,1.13) forwards;
 `
 
-export const StillBanner = styled.p`
+export const StillBanner = styled.h2`
   text-align: center;
 `
 
