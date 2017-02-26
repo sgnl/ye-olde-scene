@@ -133,12 +133,20 @@ export const Grid = styled.section`
   flex-flow: column nowrap;
   align-items: center;
   animation: ${bounce} 2s ease, ${shrinkTopPadding} 4s cubic-bezier(.95,-0.19,.39,1.13) forwards;
+  ${media.tablet`
+    flex-flow: row wrap;
+    justify-content: center;
+  `}
 `
 
 export const Card = styled.article`
-  width: 98%;
+  width: 45%;
+  height: 350px;
   padding: 2.5em 0.5em;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
+  ${media.tablet`
+
+  `}
 `
 
 export const CardHeader = styled.h2`
@@ -190,6 +198,9 @@ export const GenreItem = styled.li`
 export const CardBio = styled.p`
   padding: 1em;
   border-left: 3px solid ${lightGrey};
+  ${media.tablet`
+    height: 95px;
+  `}
 `
 
 export const UrlList = styled.ul`
