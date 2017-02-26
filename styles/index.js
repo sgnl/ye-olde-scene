@@ -130,15 +130,15 @@ const shrinkTopPadding = keyframes`
 
 export const Grid = styled.section`
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column nowrap;
+  align-items: center;
   animation: ${bounce} 2s ease, ${shrinkTopPadding} 4s cubic-bezier(.95,-0.19,.39,1.13) forwards;
 `
 
 export const Card = styled.article`
-  width: 100%;
+  width: 98%;
   padding: 2.5em 0.5em;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
-  font-size: 16px;
 `
 
 export const CardHeader = styled.h2`
@@ -148,20 +148,17 @@ export const CardHeader = styled.h2`
   text-transform: uppercase;
 `
 
-// refactor to use props!
 export const imageBannerConstructor = (url) => {
   return `
     height: 3em;
     background-image: url(//${ url });
     background-repeat: no-repeat;
     background-size: cover;
-    ${media.tablet`height: 6  em;`}
+    ${media.tablet`height: 6em;`}
   `
 }
 
 export const DefaultImageBanner = styled.div`
-  margin: 0 auto;
-  width: 99%;
   height: 3em;
   background-image: url(https://scontent-lax3-1.cdninstagram.com/t51.2885-15/e15/12445909_989917981084297_402039653_n.jpg?ig_cache_key=Mjk1MzIzNjMwNTI0NjgxMjk4.2);
   background-repeat: no-repeat;
@@ -191,10 +188,8 @@ export const GenreItem = styled.li`
 `
 
 export const CardBio = styled.p`
-  padding-top: 1em;
-  padding-bottom: 1em;
-  padding-left: 1em;
-  border-left: 2px solid ${lightGrey};
+  padding: 1em;
+  border-left: 3px solid ${lightGrey};
 `
 
 export const UrlList = styled.ul`
