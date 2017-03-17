@@ -4,7 +4,9 @@ import styleSheet from 'styled-components/lib/models/StyleSheet'
 export default class MyDocument extends Document {
   static async getInitialProps ({ renderPage }) {
     const page = renderPage()
-    const styles = styleSheet.rules().map(rule => rule.cssText).join('\n')
+    const styles = (
+      <style dangerouslySetInnerHTML={{ __html: styleSheet.rules().map(rule => rule.cssText).join('\n') }} />
+    )
     return { ...page, styles }
   }
 
@@ -18,7 +20,6 @@ export default class MyDocument extends Document {
           <link href="https://fonts.googleapis.com/css?family=Lato:300|Open+Sans:300,700" rel="stylesheet" />
           <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
           <link href="/static/reset.css" rel="stylesheet" />
-          <style dangerouslySetInnerHTML={{ __html: this.props.styles }} />
         </Head>
         <body>
           <Main />
