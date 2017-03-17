@@ -15,10 +15,10 @@ export default class MyDocument extends Document {
       <html>
         <Head>
           <title>ye olde scene - curating local music history</title>
-          {/* GLOBAL STYLES */}
           <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0" />
           <link href="https://fonts.googleapis.com/css?family=Lato:300|Open+Sans:300,700" rel="stylesheet" />
           <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
+          {/* GLOBAL STYLES */}
           <link href="/static/reset.css" rel="stylesheet" />
         </Head>
         <body>
