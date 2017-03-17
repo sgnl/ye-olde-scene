@@ -52,7 +52,7 @@ export default inject("store")(observer(({ store }) => {
                   { c.genres.map((g, i) => <GenreItem key={ i } onClick={(e) => store.updateFilterString(e.target.innerHTML)}>{ g }</GenreItem>)}
                 </GenreList>
                 {
-                  !c.biography ? '' : <CardBio>{ c.biography }</CardBio>
+                  !c.biography ? <CardBio>{ `no biography given` }</CardBio> : <CardBio>{ c.biography }</CardBio>
                 }
                 <UrlList>
                   { c.websites.map((g, i) => {
@@ -61,7 +61,7 @@ export default inject("store")(observer(({ store }) => {
                         <UrlItem href={ `//${g[1]}` }>
                           <FontAwesome
                             name={ g[0] }
-                            ariaLabel={ g[0]}
+                            ariaLabel={ g[0] }
                             fixedWidth
                           />
                           <span >&nbsp;{ g[0] }</span>
@@ -74,7 +74,7 @@ export default inject("store")(observer(({ store }) => {
             )
           }
 
-          let BannerComponent = c.component
+        let BannerComponent = c.component
 
         switch (c.isBanner) {
             case 'INFO':

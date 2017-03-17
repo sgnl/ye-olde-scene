@@ -20,8 +20,8 @@ import {
  * 1. Visual
  */
 
-const lightGrey = '#5A5A5A';
-const lighterGrey = '#7A7A7A';
+const lightGrey = '#5A5A5A'
+const lighterGrey = '#7A7A7A'
 
 export const Frame = styled.div`
   display: flex;
@@ -152,10 +152,12 @@ export const Card = styled.article`
   ${media.tablet`
     width: 45%;
     height: 325px;
+    border: none;
   `}
   ${media.desktop`
     width: 45%;
     height: 570px;
+    border: none;
   `}
 `
 
@@ -187,7 +189,7 @@ export const imageBannerConstructor = (url) => {
 
 export const DefaultImageBanner = styled.div`
   height: 3em;
-  background-image: url(https://scontent-lax3-1.cdninstagram.com/t51.2885-15/e15/12445909_989917981084297_402039653_n.jpg?ig_cache_key=Mjk1MzIzNjMwNTI0NjgxMjk4.2);
+  background-image: url(//scontent-lax3-1.cdninstagram.com/t51.2885-15/e15/12445909_989917981084297_402039653_n.jpg?ig_cache_key=Mjk1MzIzNjMwNTI0NjgxMjk4.2);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0 -100px;
